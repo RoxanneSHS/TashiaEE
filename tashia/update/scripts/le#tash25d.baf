@@ -1,0 +1,15 @@
+IF
+  Dead("Abazigal1")
+  InParty(Myself)
+  Global("TashiaRomanceActive","GLOBAL",2)
+  CombatCounter(0)
+  !AreaType(DUNGEON)
+  Global("LE#TashiaChildLoveTalk","GLOBAL",0)
+  !StateCheck("Tashia",CD_STATE_NOTVALID)
+THEN
+    RESPONSE #100
+             SetGlobal("LE#TashiaChildLoveTalk","GLOBAL",1)
+ 	 	  PlaySong(0)
+	 	  PlaySound("TashiaM1")             
+             Interact(Player1)
+END

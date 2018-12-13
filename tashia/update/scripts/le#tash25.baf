@@ -1,0 +1,149 @@
+IF
+  InParty(Myself)
+  Global("LE#TashiaProstituteLeave","GLOBAL",1)
+  Global("ProScore","GLOBAL",2)
+  !StateCheck("Tashia",CD_STATE_NOTVALID)
+THEN
+    RESPONSE #100
+        SetGlobal("LE#TashiaProstituteLeave","GLOBAL",2)
+        Interact(Player1)
+END
+
+IF
+  InParty(Myself)
+  GlobalGT("BeginChallenge1","GLOBAL",11) //meer
+  CombatCounter(0)
+  !See([ENEMY])
+  Global("LE#TashiaFirstChallengeComment","GLOBAL",0)
+  !StateCheck("Tashia",CD_STATE_NOTVALID)
+  !Global("TashiaRomanceActive","GLOBAL",2)
+THEN
+    RESPONSE #100
+        SetGlobal("LE#TashiaFirstChallengeComment","GLOBAL",1)
+		  Wait(3)
+ 	 	  PlaySong(0)
+	 	  PlaySound("TashiaM1")
+        Interact(Player1)
+END
+
+IF
+  InParty(Myself)
+  GlobalGT("BeginChallenge3","GLOBAL",1)
+  CombatCounter(0)
+  !See([ENEMY])
+  Global("LE#TashiaThirdChallengeComment","GLOBAL",0)
+  !StateCheck("Tashia",CD_STATE_NOTVALID)
+THEN
+    RESPONSE #100
+        SetGlobal("LE#TashiaThirdChallengeComment","GLOBAL",1)
+ 	 	  PlaySong(0)
+	 	  PlaySound("TashiaM1")
+        Interact(Player1)
+END
+
+IF
+  Global("LE#TashiaChildLoveTalk","GLOBAL",3)
+  InParty(Myself)
+  Global("TashiaRomanceActive","GLOBAL",2)
+  CombatCounter(0)
+  !AreaType(DUNGEON)
+  !StateCheck("Tashia",CD_STATE_NOTVALID)
+THEN
+    RESPONSE #100
+             SetGlobal("LE#TashiaChildLoveTalk","GLOBAL",4)
+ 	 	  PlaySong(0)
+	 	  PlaySound("TashiaM1")
+             Interact(Player1)
+END
+
+IF
+  InParty(Myself)
+  Global("TashiaRomanceActive","GLOBAL",2)
+  GlobalGT("LE#TashiaFirstChallengeLoveTalk","GLOBAL",0)
+  GlobalGT("ExpLoveTalk","LOCALS",6)
+  OR(2)
+    Race(Player1, HUMAN)
+    Race(Player1, HALF_ELF)
+  Global("LE#TashiaRaceLoveTalk","GLOBAL",0)
+  Global("LE#TashiaRaceLoveTalkTimerSet","GLOBAL",0)
+THEN
+    RESPONSE #100
+             SetGlobal("LE#TashiaRaceLoveTalkTimerSet","GLOBAL",1)
+				 RealSetGlobalTimer("LE#TashiaRaceLoveTalkTimer","GLOBAL",900)
+END
+
+IF
+  InParty(Myself)
+  Global("TashiaRomanceActive","GLOBAL",2)
+  CombatCounter(0)
+  !AreaType(DUNGEON)
+  !StateCheck("Tashia",CD_STATE_NOTVALID)
+  !See([ENEMY])
+  Global("LE#TashiaRaceLoveTalk","GLOBAL",0)
+  RealGlobalTimerExpired("LE#TashiaRaceLoveTalkTimer","GLOBAL")
+THEN
+	RESPONSE #100
+		SetGlobal("LE#TashiaRaceLoveTalk","GLOBAL",1)
+ 	 	  PlaySong(0)
+	 	  PlaySound("TashiaM1")
+		Interact(Player1)
+END
+
+IF
+  InParty(Myself)
+  Global("TashiaRomanceActive","GLOBAL",2)
+  GlobalGT("BeginChallenge1","GLOBAL",11) //meer
+  Global("GavePocketPlane","GLOBAL",1)
+  CombatCounter(0)
+  !AreaType(DUNGEON)
+  !StateCheck("Tashia",CD_STATE_NOTVALID)
+  !See([ENEMY])
+  Global("LE#TashiaFirstChallengeLoveTalk","GLOBAL",0)
+THEN
+    RESPONSE #100
+             SetGlobal("LE#TashiaFirstChallengeLoveTalk","GLOBAL",1)
+				 Wait(3)
+ 	 	  PlaySong(0)
+	 	  PlaySound("TashiaM1")
+             Interact(Player1)
+END
+
+IF
+	InParty(Myself)
+	!Dead("Tashia")
+	Global("LE#TashiaNightmareLoveTalk","GLOBAL",0)
+	Global("LE#TashiaNMTimerSet","GLOBAL",0)
+	Global("SaradushSacked","GLOBAL",1)
+	GlobalGT("ExpLoveTalk","LOCALS",8)
+THEN
+	RESPONSE #100
+		RealSetGlobalTimer("LE#TashiaNMTimer","GLOBAL",900)
+		SetGlobal("LE#TashiaNMTimerSet","GLOBAL",1)
+END
+
+IF
+	InParty(Myself)
+	!Dead("Tashia")
+	Global("TashiaRomanceActive","GLOBAL",2)
+	Global("LE#TashiaNightmareLoveTalk","GLOBAL",0)
+	RealGlobalTimerExpired("LE#TashiaNMTimer","GLOBAL")
+	PartyRested()
+	CombatCounter(0)
+  	!AreaType(DUNGEON)
+  	!StateCheck("Tashia",CD_STATE_NOTVALID)
+  	!See([ENEMY])
+THEN
+	RESPONSE #100
+		SetGlobal("LE#TashiaNightmareLoveTalk","GLOBAL",1)
+ 	 	  PlaySong(0)
+	 	  PlaySound("TashiaM1")
+		Interact(Player1)
+END
+
+IF
+	InParty(Myself)
+	Global("YagaComment","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("YagaComment","LOCALS",1)
+END

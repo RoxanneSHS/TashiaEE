@@ -1,0 +1,40 @@
+IF
+    Dead("taarilis") // Arilistan - Arilistan DeCourte
+    Global("SpawnTashiaGhost","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("SpawnTashiaGhost","GLOBAL",1)
+        CreateCreature("cutspy",[1320.660],5) // No such index
+        CreateVisualEffect("SPDEATH3",[1320.660])
+        Wait(2)
+        CreateCreature("tadream",[1320.660],5) // an apparition
+END
+
+IF
+    Global("TADreamResurrected","GLOBAL",2)
+    !InParty("Tashia")
+THEN
+    RESPONSE #100
+        SetGlobal("TADreamResurrected","GLOBAL",3)
+        SmallWait(20)
+        PlaySound("EFF_M23B")
+        CreateVisualEffect("SPPOWRRD",[1320.660])
+        CreateVisualEffect("SPGRWHRL",[1320.660])
+        SmallWait(5)
+        CreateVisualEffect("SPGRWHRL",[1320.660])
+        SmallWait(5)
+        CreateVisualEffect("SPGRWHRL",[1320.660])
+        SmallWait(5)
+        CreateVisualEffect("SPGRWHRL",[1320.660])
+        SmallWait(5)
+        CreateVisualEffect("SPGRWHRL",[1320.660])
+        SmallWait(5)
+        CreateVisualEffect("SPGRWHRL",[1320.660])
+        SmallWait(5)
+        CreateVisualEffect("SPGRWHRL",[1320.660])
+        SmallWait(15)
+        MoveGlobalObject("tashia","cutspy")
+        ActionOverride("cutspy",DestroySelf())
+END
+
+

@@ -1,0 +1,16 @@
+IF
+    Range(Player1,20)
+    NumTimesTalkedTo(0)
+    See(Player1)
+    Global("SawTAFamil","GLOBAL",0)
+    IsValidForPartyDialog("Tashia")
+    GlobalLT("chapter","GLOBAL",%bg2_chapter_8%)
+THEN
+    RESPONSE #100
+        FaceObject(Player1)
+        DisplayStringHead(Myself,@106) // No such index
+        SetGlobal("SawTAFamil","GLOBAL",1)
+        StartDialogueNoSet(Player1)
+END
+
+

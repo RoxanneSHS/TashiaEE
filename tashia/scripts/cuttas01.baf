@@ -1,0 +1,53 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player1)
+        ClearAllActions()
+        StartCutSceneMode()
+        SetGlobal("TashiaPlot","GLOBAL",6)
+        CreateCreatureObjectOffScreen("TAGIRL",Myself,0,0,0)
+        CreateCreatureObject("TAKOMT","TAGIRL",0,0,0)
+        CreateCreatureObject("TATUMP","TAGIRL",0,0,0)
+        MoveViewObject("TAGIRL",VERY_FAST)
+        ActionOverride("TAGIRL",MoveToObject(Player1))
+        ActionOverride("TAKOMT",MoveToObjectFollow("TAGIRL"))
+        ActionOverride("TATUMP",MoveToObjectFollow("TAGIRL"))
+        Wait(2)
+        ActionOverride("TAGIRL",FaceObject("TAKOMT"))
+        Wait(1)
+        ActionOverride("TAKOMT",FaceObject("TAGIRL"))
+        ActionOverride("TATUMP",FaceObject("TAGIRL"))
+        MoveViewObject("TAGIRL",VERY_FAST)
+        DisplayStringHead("TAGIRL",@176) // No such index
+        Wait(4)
+        ActionOverride("TAKOMT",FaceObject("TAGIRL"))
+        ActionOverride("TATUMP",FaceObject("TAGIRL"))
+        ActionOverride("TAGIRL",FaceObject("TAKOMT"))
+        DisplayStringHead("TAKOMT",@177) // No such index
+        Wait(4)
+        DisplayStringHead("TATUMP",@178) // No such index
+        Wait(2)
+        DisplayStringHead("TAKOMT",@179) // No such index
+        Wait(4)
+        DisplayStringHead("TAGIRL",@180) // No such index
+        Wait(3)
+        DisplayStringHead("TAKOMT",@181) // No such index
+        Wait(7)
+        DisplayStringHead("TATUMP",@182) // No such index
+        Wait(5)
+        DisplayStringHead("TAKOMT",@183) // No such index
+        Wait(7)
+        DisplayStringHead("TAGIRL",@184) // No such index
+        Wait(7)
+        DisplayStringHead("TAKOMT",@185) // No such index
+        Wait(7)
+        DisplayStringHead("TAGIRL",@186) // No such index
+        Wait(2)
+        ActionOverride("TAKOMT",FaceObject(Player1))
+        ActionOverride("TATUMP",FaceObject(Player1))
+        ActionOverride("TAKOMT",StartDialogueNoSet(Player1))
+        EndCutSceneMode()
+END
+
+

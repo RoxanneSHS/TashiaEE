@@ -1,0 +1,25 @@
+IF
+  Contains("LE#tbody",Myself)
+  Global("CleanseVampire","AR1401",0)
+THEN
+  RESPONSE #100
+    SetGlobal("CleanseVampire","AR1401",1)
+END
+
+IF
+  Contains("LE#tbody",Myself)
+  Contains("MISCBP",Myself)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobal("CleanseVampire","AR1401",2)
+    DestroyItem("le#tbody")  // ~Tashia's Body~
+    DestroyItem("MISCBP")  // ~Bodhi's Black Heart~
+    CreateVisualEffect("SPMETSW2",[2592.1701])
+    CreateVisualEffect("SPMETSW2",[2645.1742])
+    Wait(1)
+    CreateVisualEffect("SPFLESHS",[2565.1677])
+    Wait(1)
+    MoveGlobal("AR1401","Tashia",[2565.1677])
+    SetInterrupt(TRUE)
+END

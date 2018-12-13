@@ -1,0 +1,562 @@
+BACKUP ~tashia/backup~
+AUTHOR ~Bert "Lord Ernie" Van Hertum (b.vanhertum@gmail.com)~
+
+VERSION ~v1.6~
+
+// Translation
+AUTO_TRA ~tashia\%s~
+
+ALWAYS
+  ACTION_IF (GAME_IS ~eet~) BEGIN
+    OUTER_SET bg2_chapter = 12
+  END ELSE BEGIN
+    OUTER_SET bg2_chapter = 0
+  END
+  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
+    OUTER_SET bg2_chapter = bg2_chapter + 1
+    OUTER_SPRINT name_source ~bg2_chapter_%i%~
+    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
+  END
+ 
+ACTION_IF (GAME_IS ~eet bg2ee~) BEGIN 
+  ACTION_DEFINE_ARRAY O#noconvert BEGIN END
+ ACTION_DEFINE_ARRAY O#reload BEGIN wsetup END
+
+  LAF HANDLE_CHARSETS
+    INT_VAR
+      infer_charsets = 1
+    STR_VAR
+      tra_path = EVAL ~%MOD_FOLDER%~
+      noconvert_array = O#noconvert
+      reload_array = O#reload
+  END
+  END
+  
+  
+END
+
+LANGUAGE ~American English~
+         ~american~
+         ~tashia/american/wsetup.tra~
+
+LANGUAGE ~Francais (traduction de Yoho)~
+         ~french~
+         ~tashia/american/wsetup.tra~
+         ~tashia/french/wsetup.tra~
+LANGUAGE ~Deutsch (Uebersetzung von Maus)~
+         ~deutsch~
+         ~tashia/deutsch/wsetup.tra~
+LANGUAGE ~Espanol (Traducido por el Clan DLAN)~
+         ~spanish~
+         ~tashia/spanish/wsetup.tra~
+LANGUAGE ~Italiano (by al17 e Hellspawn, http://rtt.altervista.org)~
+         ~italian~
+         ~tashia/italian/wsetup.tra~
+
+
+
+// Installation
+BEGIN @0
+
+LAF HANDLE_AUDIO END
+
+APPEND ~STATE.IDS~ // adds custom IsValidForPartyDialogue state
+  ~0x80101FEF CD_STATE_NOTVALID~
+  UNLESS ~CD_STATE_NOTVALID~
+
+// Impotant things for the installation
+
+// Copy creatures and assign proper strings
+COPY ~tashia/Creatures/tashia.cre~ ~override/tashia.cre~
+     ~tashia/Creatures/taevil.cre~ ~override/taevil.cre~
+  SAY NAME1 @1
+  SAY NAME2 @1
+  SAY BIO @2
+  SAY SELECT_ACTION1 ~~ [tashia_] //0292
+  SAY SELECT_COMMON4 ~~ [tashia0] //0280
+  SAY TARGET_IMMUNE ~~ [tashia2] //0432
+  SAY INVENTORY_FULL ~~ [tashia3] //0436
+  SAY PICKED_POCKET ~~ [tashia4] //0440
+  SAY EXISTANCE1 ~~ [tashia5] //0444
+  SAY EXISTANCE2 ~~ [tashia6] //0448
+  SAY BATTLE_CRY1 ~~ [tashiaa] //0200
+  SAY LEADER ~~ [tashiab] //0188
+  SAY TIRED ~~ [tashiac] //0192
+  SAY BORED ~~ [tashiad] //0196
+  SAY HURT ~~ [tashiae] //0244
+  SAY SELECT_COMMON1 ~~ [tashiaf] //0268
+  SAY SELECT_COMMON2 ~~ [tashiag] //0272
+  SAY SELECT_COMMON3 ~~ [tashiah] //0276
+  SAY INITIAL_MEETING ~~ [tashiah] //0164
+  SAY BATTLE_CRY2 ~~ [tashiai] //0204
+  SAY BATTLE_CRY3 ~~ [tashiaj] //0208
+  SAY BATTLE_CRY4 ~~ [tashiak] //0212
+  SAY DAMAGE ~~ [tashial] //0236
+  SAY DYING ~~ [tashiam] //0240
+  SAY AREA_FOREST ~~ [tashian] //0248
+  SAY AREA_CITY ~~ [tashiao] //0252
+  SAY AREA_DUNGEON ~~ [tashiap] //0256
+  SAY AREA_DAY ~~ [tashiaq] //0260
+  SAY AREA_NIGHT ~~ [tashiar] //0264
+  SAY SELECT_ACTION2 ~~ [tashias] //0296
+  SAY SELECT_ACTION3 ~~ [tashiat] //0300
+  SAY SELECT_ACTION4 ~~ [tashiau] //0304
+  SAY SELECT_ACTION5 ~~ [tashiav] //0308
+  SAY SELECT_RARE1 ~~ [tashiax] //0416
+  SAY SELECT_RARE2 ~~ [tashiay] //0420
+  SAY CRITICAL_HIT ~~ [tashiaz] //0424
+
+COPY ~tashia/Creatures/taarilis.cre~ ~override/taarilis.cre~
+  SAY NAME1 @35
+  SAY NAME2 @36
+
+COPY ~tashia/Creatures/tajarmis.cre~ ~override/tajarmis.cre~
+  SAY NAME1 @37
+  SAY NAME2 @38
+
+COPY ~tashia/Creatures/tavex.cre~ ~override/tavex.cre~
+  SAY NAME1 @39
+  SAY NAME2 @39
+
+COPY ~tashia/Creatures/tamage.cre~ ~override/tamage.cre~
+  SAY NAME1 @40
+  SAY NAME2 @40
+
+COPY ~tashia/Creatures/tasold01.cre~ ~override/tasold01.cre~
+     ~tashia/Creatures/tasold02.cre~ ~override/tasold02.cre~
+  SAY NAME1 @41
+  SAY NAME2 @41
+
+COPY ~tashia/Creatures/taelite.cre~ ~override/taelite.cre~
+  SAY NAME1 @42
+  SAY NAME2 @42
+
+COPY ~tashia/Creatures/tagirl.cre~ ~override/tagirl.cre~
+  SAY NAME1 @43
+  SAY NAME2 @43
+
+COPY ~tashia/Creatures/tatump.cre~ ~override/tatump.cre~
+  SAY NAME1 @44
+  SAY NAME2 @44
+
+COPY ~tashia/Creatures/takomt.cre~ ~override/takomt.cre~
+  SAY NAME1 @45
+  SAY NAME2 @45
+
+COPY ~tashia/Creatures/tadream.cre~ ~override/tadream.cre~
+  SAY NAME1 @46
+  SAY NAME2 @46
+
+COPY ~tashia/Creatures/tafamil.cre~ ~override/tafamil.cre~
+  SAY NAME1 @47
+  SAY NAME2 @47
+
+COPY ~tashia/Items/tafamil.itm~ ~override/tafamil.itm~
+  SAY NAME1 @48
+  SAY NAME2 @48
+  SAY DESC @49
+
+COPY ~tashia/Creatures/tmother.cre~ ~override/tmother.cre~
+  SAY NAME1 @50
+  SAY NAME2 @50
+
+COPY ~tashia/Items/tafamclw.itm~ ~override/tafamclw.itm~
+  SAY NAME1 @290
+  SAY NAME2 @290
+
+
+// Copy files
+COPY ~tashia/Media/tafamil.eff~  ~override/tafamil.eff~
+     ~tashia/Media/j#blank.mus~  ~music/j#blank.mus~
+
+COPY ~tashia/Media/bg2/tashiaS.bmp~  ~override/tashiaS.bmp~
+     ~tashia/Media/bg2/tashiaM.bmp~  ~override/tashiaM.bmp~
+     ~tashia/Media/bg2/tashiaL.bmp~  ~override/tashiaL.bmp~
+
+ACTION_IF (GAME_IS ~eet bg2ee~) BEGIN
+COPY ~tashia/Media/ee/tashiaS.bmp~  ~override/tashiaS.bmp~
+     ~tashia/Media/ee/tashiaM.bmp~  ~override/tashiaM.bmp~
+     ~tashia/Media/ee/tashiaL.bmp~  ~override/tashiaL.bmp~
+END
+
+// Compile scripts
+COMPILE ~tashia/Scripts/taarilis.baf~
+  USING ~~
+
+COMPILE ~tashia/Scripts/tadream.baf~
+  USING ~~
+
+COMPILE ~tashia/Scripts/tafamil.baf~
+  USING ~tashia/%s/wsetup.tra~
+
+COMPILE ~tashia/Scripts/tash25.baf~
+  USING ~tashia/%s/wsetup.tra~
+
+COMPILE ~tashia/Scripts/tashi25d.baf~
+  USING ~~
+
+COMPILE EVALUATE_BUFFER ~tashia/Scripts/tashia.baf~
+  USING ~tashia/%s/wsetup.tra~
+
+COMPILE ~tashia/Scripts/cuttas01.baf~
+  USING ~tashia/%s/wsetup.tra~
+
+COMPILE ~tashia/Scripts/cuttas02.baf~
+  USING ~tashia/%s/wsetup.tra~
+
+COMPILE ~tashia/Scripts/cuttas03.baf~
+  USING ~tashia/%s/wsetup.tra~
+
+COMPILE ~tashia/Scripts/cuttas04.baf~
+  USING ~~
+
+COMPILE ~tashia/Scripts/cuttas05.baf~
+  USING ~tashia/%s/wsetup.tra~
+
+COMPILE ~tashia/Scripts/cuttas06.baf~
+  USING ~~
+
+COPY_EXISTING ~AR2602.are~ ~override~
+ WRITE_ASCII 0x94 ~AR2602~
+BUT_ONLY_IF_IT_CHANGES
+
+COMPILE ~tashia/Scripts/ar2602.baf~
+  USING ~~
+
+COMPILE ~tashia/Scripts/tfix.baf~
+  USING ~tashia/%s/wsetup.tra~
+
+// Compile dialogs
+COMPILE ~tashia/Dialogues/taevil.d~
+  USING  ~tashia/%s/taevil.tra~
+
+COMPILE ~tashia/Dialogues/tashia.d~
+  USING  ~tashia/%s/tashia.tra~
+
+COMPILE ~tashia/Dialogues/tashiaj.d~
+  USING  ~tashia/%s/tashiaj.tra~
+
+COMPILE ~tashia/Dialogues/tashiap.d~
+  USING ~tashia/%s/tashiap.tra~
+
+COMPILE ~tashia/Dialogues/btashia.d~
+  USING ~tashia/%s/btashia.tra~
+
+COMPILE ~tashia/Dialogues/tajarmis.d~
+  USING   ~tashia/%s/tajarmis.tra~
+
+COMPILE ~tashia/Dialogues/taarilis.d~
+  USING  ~tashia/%s/taarilis.tra~
+
+COMPILE ~tashia/Dialogues/tadream.d~
+  USING ~tashia/%s/tadream.tra~
+
+COMPILE ~tashia/Dialogues/takomt.d~
+  USING ~tashia/%s/takomt.tra~
+
+COMPILE ~tashia/Dialogues/tafamil.d~
+  USING  ~tashia/%s/tafamil.tra~
+
+COMPILE ~tashia/Dialogues/btashi25.d~
+  USING  ~tashia/%s/btashi25.tra~
+
+COMPILE ~tashia/Dialogues/tashi25j.d~
+  USING ~tashia/%s/tashi25j.tra~
+
+COMPILE ~tashia/Dialogues/tashi25p.d~
+  USING ~tashia/%s/tashi25p.tra~
+
+COMPILE ~tashia/Dialogues/tmother.d~
+  USING ~tashia/%s/tmother.tra~
+
+COMPILE ~tashia/Dialogues/taflirt.d~
+  USING ~tashia/%s/taflirt.tra~
+
+// Patch StringRefs in scripts
+
+COPY ~tashia/Media/tashend1.2da~ ~override/tashend1.2da~
+  REPLACE ~187678~ @103
+COPY ~tashia/Media/tashend2.2da~ ~override/tashend2.2da~
+  REPLACE ~187678~ @104
+COPY ~tashia/Media/tashend3.2da~ ~override/tashend3.2da~
+  REPLACE ~187678~ @105
+
+// Pretend scripts
+EXTEND_TOP ~player1d.bcs~ ~tashia/Scripts/tashia1d.bcs~
+EXTEND_TOP ~ar2010.bcs~ ~tashia/Scripts/tash2010.bcs~
+EXTEND_TOP ~ar4500.bcs~ ~tashia/Scripts/tash4500.bcs~
+EXTEND_TOP ~ar6200.bcs~ ~tashia/Scripts/tash6200.bcs~
+EXTEND_BOTTOM ~cut218g.bcs~ ~tashia/Scripts/tcut218g.bcs~
+
+// Append Tashia NPC dialogs to the games 2da files
+
+COPY_EXISTING ~songlist.2da~ ~override~
+SET_2DA_ENTRY 0 2 3 ~J#BLANK.MUS~
+
+APPEND ~pdialog.2da~
+  ~TASHIA       TASHIAP            TASHIAJ           TASHIAD~
+  UNLESS ~TASHIA~
+  UNLESS ~25POST~
+
+APPEND ~pdialog.2da~
+  ~TASHIA       TASHIAP            TASHIAJ           TASHIAD        TASHI25P           TASHI25J              TASHI25D              tash25~
+  UNLESS ~TASHIA~
+  IF ~25POST~
+
+APPEND ~interdia.2da~
+  ~TASHIA      BTASHIA~
+  UNLESS ~TASHIA~
+  UNLESS ~25FILE~
+
+APPEND ~interdia.2da~
+  ~TASHIA      BTASHIA       BTASHI25~
+  UNLESS ~TASHIA~
+  IF ~25FILE~
+
+
+APPEND ~npclevel.2da~
+  ~Tashia      Tashia      Tashia      Tashia      Tashia      Tashia      Tashia     Tashia   Tashia      Tashia      Tashia      Tashia      Tashia      Tashia      Tashia      Tashia      Tashia     Tashia   Tashia   Tashia    Tashia   Tashia    Tashia   Tashia~
+  UNLESS ~Tashia~
+
+
+APPEND ~npclvl25.2da~
+  ~Tashia      Tashia      Tashia      Tashia      Tashia      Tashia      Tashia     Tashia   Tashia      Tashia      Tashia      Tashia      Tashia      Tashia      Tashia      Tashia      Tashia     Tashia   Tashia   Tashia    Tashia   Tashia    Tashia   Tashia~
+  UNLESS ~Tashia~
+
+BEGIN @301
+SUBCOMPONENT @300
+REQUIRE_COMPONENT ~setup-tashia.tp2~ ~0~ @312
+
+COMPILE ~Tashia\update\dialogues\LE#TashiaA.d~
+USING ~Tashia\update\%s\LE#TashiaA.tra~
+
+ADD_JOURNAL EXISTING TITLE (#74337) @0 @1 @2 USING ~Tashia\update\%s\LE#TashiaA.tra~
+
+COMPILE ~Tashia\update\dialogues\LE#Tash25A.d~
+USING ~Tashia\update\%s\LE#Tash25A.tra~
+
+COMPILE ~Tashia\update\dialogues\LE#Inter.d~
+USING ~Tashia\update\%s\LE#Inter.tra~
+
+COMPILE ~Tashia\update\dialogues\LE#Tashia25j.d~
+USING ~Tashia\update\%s\LE#Tashia25j.tra~
+
+COPY ~Tashia\update\creatures\le#Belm.cre~ ~override\le#belm.cre~
+SAY NAME1 @313
+SAY NAME2 @313
+
+// Scripts
+
+COMPILE ~Tashia\update\scripts\TashiaD.baf~
+COMPILE ~Tashia\update\scripts\LE#vtash.baf~
+COMPILE ~Tashia\update\scripts\LE#vai.baf~
+
+EXTEND_TOP ~Tashia.bcs~ ~Tashia\update\scripts\LE#Tashia.baf~
+EXTEND_TOP ~Tash25.bcs~ ~Tashia\update\scripts\LE#Tash25.baf~
+EXTEND_TOP ~Tashi25d.bcs~ ~Tashia\update\scripts\LE#Tash25D.baf~
+
+COPY_EXISTING ~AR0713.are~ ~override~
+ WRITE_ASCII 0x94 ~AR0713~
+BUT_ONLY_IF_IT_CHANGES
+
+EXTEND_BOTTOM ~ar0713.bcs~ ~Tashia\update\scripts\LE#AR0713.baf~
+EXTEND_BOTTOM ~ar0809.bcs~ ~Tashia\update\scripts\LE#AR0809.baf~
+EXTEND_BOTTOM ~cleanse.bcs~ ~Tashia\update\scripts\LE#Cleanse.baf~
+
+// Cutscenes
+
+COMPILE ~Tashia\update\scripts\LE#BodhA.baf~
+COMPILE ~Tashia\update\scripts\LE#gicut.baf~
+COMPILE ~Tashia\update\scripts\LE#gics2.baf~
+COMPILE ~Tashia\update\scripts\LE#gics3.baf~
+COMPILE ~Tashia\update\scripts\LE#cstb1.baf~
+COMPILE ~Tashia\update\scripts\LE#cstb2.baf~
+COMPILE ~Tashia\update\scripts\LE#cstb3.baf~
+COMPILE ~Tashia\update\scripts\LE#tsics.baf~
+
+// Kit Correction (needed for the Barbarian dialogue)
+COPY_EXISTING ~kit.ids~ ~override~
+  REPLACE_TEXTUALLY ~0x00004000~ ~0x4000~ // TRUECLASS/MAGESCHOOL_GENERALIST
+  REPLACE_TEXTUALLY ~0x00000040~ ~0x0040~ // MAGESCHOOL_ABJURER
+  REPLACE_TEXTUALLY ~0x00000080~ ~0x0080~ // MAGESCHOOL_CONJURER
+  REPLACE_TEXTUALLY ~0x00000100~ ~0x0100~ // MAGESCHOOL_DIVINER
+  REPLACE_TEXTUALLY ~0x00000200~ ~0x0200~ // MAGESCHOOL_ENCHANTER
+  REPLACE_TEXTUALLY ~0x00000400~ ~0x0400~ // MAGESCHOOL_ILLUSIONIST
+  REPLACE_TEXTUALLY ~0x00000800~ ~0x0800~ // MAGESCHOOL_INVOKER
+  REPLACE_TEXTUALLY ~0x00001000~ ~0x1000~ // MAGESCHOOL_NECROMANCER
+  REPLACE_TEXTUALLY ~0x00002000~ ~0x2000~ // MAGESCHOOL_TRANSMUTER
+  REPLACE_TEXTUALLY ~0x00000001~ ~0x4001~ // BERSERKER
+  REPLACE_TEXTUALLY ~0x00000002~ ~0x4002~ // WIZARDSLAYER
+  REPLACE_TEXTUALLY ~0x00000004~ ~0x4003~ // KENSAI
+  REPLACE_TEXTUALLY ~0x00000008~ ~0x4004~ // CAVALIER
+  REPLACE_TEXTUALLY ~0x00000010~ ~0x4005~ // INQUISITOR
+  REPLACE_TEXTUALLY ~0x00000020~ ~0x4006~ // UNDEADHUNTER
+  REPLACE_TEXTUALLY ~0x00008000~ ~0x4007~ // FERALAN
+  REPLACE_TEXTUALLY ~0x00010000~ ~0x4008~ // STALKER
+  REPLACE_TEXTUALLY ~0x00020000~ ~0x4009~ // BEASTMASTER
+  REPLACE_TEXTUALLY ~0x00040000~ ~0x400A~ // ASSASIN
+  REPLACE_TEXTUALLY ~0x00080000~ ~0x400B~ // BOUNTYHUNTER
+  REPLACE_TEXTUALLY ~0x00100000~ ~0x400C~ // SWASHBUCKLER
+  REPLACE_TEXTUALLY ~0x00200000~ ~0x400D~ // BLADE
+  REPLACE_TEXTUALLY ~0x00400000~ ~0x400E~ // JESTER
+  REPLACE_TEXTUALLY ~0x00800000~ ~0x400F~ // SKALD
+  REPLACE_TEXTUALLY ~0x01000000~ ~0x4013~ // GODTALOS
+  REPLACE_TEXTUALLY ~0x02000000~ ~0x4014~ // GODHELM
+  REPLACE_TEXTUALLY ~0x04000000~ ~0x4015~ // GODLATHANDER
+  REPLACE_TEXTUALLY ~0x08000000~ ~0x4010~ // TOTEMIC
+  REPLACE_TEXTUALLY ~0x10000000~ ~0x4011~ // SHAPESHIFTER
+  REPLACE_TEXTUALLY ~0x20000000~ ~0x4012~ // BEASTFRIEND
+  REPLACE_TEXTUALLY ~0x40000000~ ~0x40000000~ // BARBARIAN
+BUT_ONLY_IF_IT_CHANGES
+
+// Items
+COPY ~Tashia\update\Items\m#ibcclk.bam~ ~override\m#ibcclk.bam~
+
+COPY ~Tashia\update\Items\le#tbody.itm~ ~override\le#tbody.itm~
+SAY NAME2 @310
+SAY DESC @311
+
+COPY ~Tashia\update\Items\le#twclk.itm~ ~override\le#twclk.itm~
+SAY NAME2 @304
+SAY DESC @305
+
+COPY ~Tashia\update\Items\le#wwclk.itm~ ~override\le#wwclk.itm~
+SAY NAME2 @306
+SAY DESC @307
+
+// Creatures
+COPY ~Tashia\update\creatures\le#aimil.cre~ ~override\le#aimil.cre~
+SAY NAME1 @308
+SAY NAME2 @308
+
+COPY ~Tashia\update\creatures\le#shop.cre~ ~override\le#shop.cre~
+SAY NAME1 @309
+SAY NAME2 @309
+
+COPY ~Tashia\update\creatures\le#vtash.cre~ ~override\le#vtash.cre~
+SAY NAME1 @1
+SAY NAME2 @1
+
+COPY ~Tashia\update\creatures\le#cowl.cre~ ~override\le#cowl.cre~
+SAY NAME1 @314
+SAY NAME2 @314
+
+BEGIN @302
+SUBCOMPONENT @300
+REQUIRE_COMPONENT ~Setup-Tashia.tp2~ ~0~ @312
+// Adding Dialogue state
+
+// Dialogue Files
+
+COMPILE ~Tashia\update\dialogues\LE#TashiaN.d~
+USING ~Tashia\update\%s\LE#TashiaN.tra~
+
+ADD_JOURNAL EXISTING TITLE (#74337) @0 @1 @2 USING ~Tashia\update\%s\LE#TashiaN.tra~
+
+COMPILE ~Tashia\update\dialogues\LE#Tashia25N.d~
+USING ~Tashia\update\%s\LE#Tashia25N.tra~
+
+COMPILE ~Tashia\update\dialogues\LE#Inter.d~
+USING ~Tashia\update\%s\LE#Inter.tra~
+
+COMPILE ~Tashia\update\dialogues\LE#Tashia25j.d~
+USING ~Tashia\update\%s\LE#Tashia25j.tra~
+
+COPY ~Tashia\update\creatures\le#Belm.cre~ ~override\le#belm.cre~
+SAY NAME1 @313
+SAY NAME2 @313
+
+// Scripts
+
+COMPILE ~Tashia\update\scripts\TashiaD.baf~
+COMPILE ~Tashia\update\scripts\LE#vtash.baf~
+COMPILE ~Tashia\update\scripts\LE#vai.baf~
+
+EXTEND_TOP ~Tashia.bcs~ ~Tashia\update\scripts\LE#TashiaN.baf~
+EXTEND_TOP ~Tash25.bcs~ ~Tashia\update\scripts\LE#Tash25.baf~
+EXTEND_TOP ~Tashi25d.bcs~ ~Tashia\update\scripts\LE#Tash25D.baf~
+
+COPY_EXISTING ~AR0713.are~ ~override~
+ WRITE_ASCII 0x94 ~AR0713~
+BUT_ONLY_IF_IT_CHANGES
+
+EXTEND_BOTTOM ~ar0713.bcs~ ~Tashia\update\scripts\LE#AR0713.baf~
+EXTEND_BOTTOM ~ar0809.bcs~ ~Tashia\update\scripts\LE#AR0809.baf~
+EXTEND_BOTTOM ~cleanse.bcs~ ~Tashia\update\scripts\LE#Cleanse.baf~
+
+// Cutscenes
+
+COMPILE ~Tashia\update\scripts\LE#BodhA.baf~
+COMPILE ~Tashia\update\scripts\LE#gicut.baf~
+COMPILE ~Tashia\update\scripts\LE#gics2.baf~
+COMPILE ~Tashia\update\scripts\LE#gics3.baf~
+COMPILE ~Tashia\update\scripts\LE#cstb1.baf~
+COMPILE ~Tashia\update\scripts\LE#cstb2.baf~
+COMPILE ~Tashia\update\scripts\LE#cstb3.baf~
+COMPILE ~Tashia\update\scripts\LE#tsics.baf~
+
+// Kit Correction (needed for the Barbarian dialogue)
+COPY_EXISTING ~kit.ids~ ~override/kit.ids~
+  REPLACE_TEXTUALLY ~0x00004000~ ~0x4000~ // TRUECLASS/MAGESCHOOL_GENERALIST
+  REPLACE_TEXTUALLY ~0x00000040~ ~0x0040~ // MAGESCHOOL_ABJURER
+  REPLACE_TEXTUALLY ~0x00000080~ ~0x0080~ // MAGESCHOOL_CONJURER
+  REPLACE_TEXTUALLY ~0x00000100~ ~0x0100~ // MAGESCHOOL_DIVINER
+  REPLACE_TEXTUALLY ~0x00000200~ ~0x0200~ // MAGESCHOOL_ENCHANTER
+  REPLACE_TEXTUALLY ~0x00000400~ ~0x0400~ // MAGESCHOOL_ILLUSIONIST
+  REPLACE_TEXTUALLY ~0x00000800~ ~0x0800~ // MAGESCHOOL_INVOKER
+  REPLACE_TEXTUALLY ~0x00001000~ ~0x1000~ // MAGESCHOOL_NECROMANCER
+  REPLACE_TEXTUALLY ~0x00002000~ ~0x2000~ // MAGESCHOOL_TRANSMUTER
+  REPLACE_TEXTUALLY ~0x00000001~ ~0x4001~ // BERSERKER
+  REPLACE_TEXTUALLY ~0x00000002~ ~0x4002~ // WIZARDSLAYER
+  REPLACE_TEXTUALLY ~0x00000004~ ~0x4003~ // KENSAI
+  REPLACE_TEXTUALLY ~0x00000008~ ~0x4004~ // CAVALIER
+  REPLACE_TEXTUALLY ~0x00000010~ ~0x4005~ // INQUISITOR
+  REPLACE_TEXTUALLY ~0x00000020~ ~0x4006~ // UNDEADHUNTER
+  REPLACE_TEXTUALLY ~0x00008000~ ~0x4007~ // FERALAN
+  REPLACE_TEXTUALLY ~0x00010000~ ~0x4008~ // STALKER
+  REPLACE_TEXTUALLY ~0x00020000~ ~0x4009~ // BEASTMASTER
+  REPLACE_TEXTUALLY ~0x00040000~ ~0x400A~ // ASSASIN
+  REPLACE_TEXTUALLY ~0x00080000~ ~0x400B~ // BOUNTYHUNTER
+  REPLACE_TEXTUALLY ~0x00100000~ ~0x400C~ // SWASHBUCKLER
+  REPLACE_TEXTUALLY ~0x00200000~ ~0x400D~ // BLADE
+  REPLACE_TEXTUALLY ~0x00400000~ ~0x400E~ // JESTER
+  REPLACE_TEXTUALLY ~0x00800000~ ~0x400F~ // SKALD
+  REPLACE_TEXTUALLY ~0x01000000~ ~0x4013~ // GODTALOS
+  REPLACE_TEXTUALLY ~0x02000000~ ~0x4014~ // GODHELM
+  REPLACE_TEXTUALLY ~0x04000000~ ~0x4015~ // GODLATHANDER
+  REPLACE_TEXTUALLY ~0x08000000~ ~0x4010~ // TOTEMIC
+  REPLACE_TEXTUALLY ~0x10000000~ ~0x4011~ // SHAPESHIFTER
+  REPLACE_TEXTUALLY ~0x20000000~ ~0x4012~ // BEASTFRIEND
+  REPLACE_TEXTUALLY ~0x40000000~ ~0x40000000~ // BARBARIAN
+
+// Items
+COPY ~Tashia\update\Items\m#ibcclk.bam~ ~override\m#ibcclk.bam~
+
+COPY ~Tashia\update\Items\le#tbody.itm~ ~override\le#tbody.itm~
+SAY NAME2 @310
+SAY DESC @311
+
+COPY ~Tashia\update\Items\le#twclk.itm~ ~override\le#twclk.itm~
+SAY NAME2 @304
+SAY DESC @305
+
+COPY ~Tashia\update\Items\le#wwclk.itm~ ~override\le#wwclk.itm~
+SAY NAME2 @306
+SAY DESC @307
+
+// Creatures
+COPY ~Tashia\update\creatures\le#aimil.cre~ ~override\le#aimil.cre~
+SAY NAME1 @308
+SAY NAME2 @308
+
+COPY ~Tashia\update\creatures\le#shop.cre~ ~override\le#shop.cre~
+SAY NAME1 @309
+SAY NAME2 @309
+
+COPY ~Tashia\update\creatures\le#vtash.cre~ ~override\le#vtash.cre~
+SAY NAME1 @1
+SAY NAME2 @1
+
+COPY ~Tashia\update\creatures\le#cowl.cre~ ~override\le#cowl.cre~
+SAY NAME1 @314
+SAY NAME2 @314

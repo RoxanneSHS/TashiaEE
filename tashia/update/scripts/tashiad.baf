@@ -1,0 +1,59 @@
+IF
+  InParty("Tashia")
+  InParty("Korgan")
+  Global("LE#TashiaKorganBanter","GLOBAL",0)
+  OR(7)
+    AreaCheck("AR0313") //Sea's Bounty
+    AreaCheck("AR0406") //Copper Coronet
+    AreaCheck("AR0509") //Five Flagons
+    AreaCheck("AR0704") //Mithrest Inn
+    AreaCheck("AR1105") //Umar Inn
+    AreaCheck("AR1602") //The Vulgar Monkey
+    AreaCheck("AR2010") //Vyatri's Pub
+THEN
+    RESPONSE #100
+        SetGlobal("LE#TashiaKorganBanter","GLOBAL",1)
+        ActionOverride("Korgan",Interact("Tashia"))
+END
+
+
+IF
+  InParty(Myself)
+  Global("TashiaMatch","GLOBAL",1)
+  Global("TashiaRomanceActive","GLOBAL",2)
+  !AreaType(DUNGEON)
+  CombatCounter(0)
+  !StateCheck("Tashia",CD_STATE_NOTVALID)
+  !See([ENEMY])
+  TimeOfDay(DUSK)
+  AreaType(FOREST)
+  GlobalGT("LoveTalk","LOCALS",50)
+  Global("LE#TashiaCookingTalk","GLOBAL",0)
+THEN
+     RESPONSE #100
+              SetGlobal("LE#TashiaCookingTalk","GLOBAL",1)
+ 	 	  PlaySong(0)
+	 	  PlaySound("TashiaM2")
+              Interact(Player1)
+END
+
+// Simulacrum Lovetalk
+IF
+  InParty(Myself)
+  HaveSpell(WIZARD_SIMULACRUM)
+  !Dead("Tashia")
+  Global("TashiaRomanceActive","GLOBAL",2)
+  Global("TashiaMatch","GLOBAL",1)
+  GlobalGT("LoveTalk","LOCALS",53)
+  CombatCounter(0)
+  !See([ENEMY])
+  !StateCheck("Tashia",CD_STATE_NOTVALID)
+  Global("LE#TashiaSimulacrumLT","GLOBAL",0)
+  AreaType(FOREST)
+THEN
+    RESPONSE #100
+    SetGlobal("LE#TashiaSimulacrumLT","GLOBAL",1)
+ 	 	  PlaySong(0)
+	 	  PlaySound("TashiaM2")    
+    Interact(Player1)
+END

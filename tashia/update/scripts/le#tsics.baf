@@ -1,0 +1,11 @@
+IF
+	Global("LE#TashiaSimulacrumLT","GLOBAL",2)
+THEN
+	RESPONSE #100
+			CutSceneId("Tashia")
+			Spell(Myself, WIZARD_SIMULACRUM)
+			Wait(2)
+			SetGlobal("LE#TashiaSimulacrumLT","GLOBAL",3)
+			Interact(Player1)
+			EndCutSceneMode()
+END

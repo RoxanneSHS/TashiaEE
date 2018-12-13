@@ -1,0 +1,14 @@
+IF
+  True()
+THEN
+    RESPONSE #100
+             ActionOverride(Player1,Spell("Belmin",WIZARD_POLYMORPH_OTHER))
+             Wait(1)
+             ActionOverride("Belmin",Polymorph(CLERIC_MALE_ELF))
+             Wait(1)
+             DisplayStringHead("Belmin",~You won't get away with this!~)
+             ActionOverride("Belmin",EscapeArea())
+             Wait(2)
+             ActionOverride("Tashia",Interact(Player1))
+             EndCutSceneMode()
+END

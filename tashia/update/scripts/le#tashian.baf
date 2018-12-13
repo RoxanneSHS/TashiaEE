@@ -1,0 +1,653 @@
+// New Lovetalks
+
+IF
+  InParty(Myself)
+  Global("TashiaMatch","GLOBAL",1)
+  !Global("TashiaRomanceActive","GLOBAL",3)
+  GlobalGT("LoveTalk","LOCALS",20)
+  GlobalGT("TashiaInterestMatch","GLOBAL",1)
+  AreaCheck("AR1600")
+  Global("LE#TashiaBrynnlawTalk","GLOBAL",0)
+  CombatCounter(0)
+  !StateCheck("Tashia",CD_STATE_NOTVALID)
+  !See([ENEMY])
+THEN
+    RESPONSE #100
+             SetGlobal("LE#TashiaBrynnlawTalk","GLOBAL",1)
+			 	 PlaySong(0)
+			 	 PlaySound("TashiaM2")
+             Interact(Player1)
+END
+
+IF
+  InParty(Myself)
+  Global("TashiaMatch","GLOBAL",1)
+  !Global("TashiaRomanceActive","GLOBAL",3)
+  GlobalGT("LoveTalk","LOCALS",25)
+  GlobalGT("TashiaInterestMatch","GLOBAL",2)
+  AreaCheck("AR2100")
+  Global("LE#TashiaUnderdarkTalk","GLOBAL",0)
+  CombatCounter(0)
+  !StateCheck("Tashia",CD_STATE_NOTVALID)
+  !See([ENEMY])
+THEN
+    RESPONSE #100
+             SetGlobal("LE#TashiaUnderdarkTalk","GLOBAL",1)
+			 	 PlaySong(0)
+			 	 PlaySound("TashiaM1")
+             Interact(Player1)
+END
+
+IF
+  InParty(Myself)
+  InParty("Imoen2")
+  Global("TashiaMatch","GLOBAL",1)
+  !Global("TashiaRomanceActive","GLOBAL",3)
+  Global("LE#TashiaImoenTalkTimerSet","GLOBAL",0)
+  !StateCheck("Tashia",CD_STATE_NOTVALID)
+  !See([ENEMY])
+THEN
+    RESPONSE #100
+             RealSetGlobalTimer("LE#TashiaImoenTalkTimer","GLOBAL",400)
+             SetGlobal("LE#TashiaImoenTalkTimerSet","GLOBAL",1)
+END
+
+IF
+  InParty(Myself)
+  InParty("Imoen2")
+  RealGlobalTimerExpired("LE#TashiaImoenTalkTimer","GLOBAL")
+  Global("LE#TashiaImoenBanter","GLOBAL",0)
+  CombatCounter(0)
+  !StateCheck("Tashia",CD_STATE_NOTVALID)
+  !StateCheck("Imoen2",CD_STATE_NOTVALID)
+  !See([ENEMY])
+THEN
+    RESPONSE #100
+             SetGlobal("LE#TashiaImoenBanter","GLOBAL",1)
+             Interact("Imoen2")
+END
+
+IF
+  InParty(Myself)
+  InParty("Imoen2")
+  Global("TashiaMatch","GLOBAL",1)
+  Global("LE#TashiaImoenBanter","GLOBAL",2)
+  !Global("TashiaRomanceActive","GLOBAL",3)
+  RealGlobalTimerExpired("LE#TashiaImoenTalkTimer","GLOBAL")
+  Global("LE#TashiaImoenTalk","GLOBAL",0)
+  CombatCounter(0)
+  !StateCheck("Tashia",CD_STATE_NOTVALID)
+  !StateCheck("Imoen2",CD_STATE_NOTVALID)
+  !See([ENEMY])
+THEN
+    RESPONSE #100
+             SetGlobal("LE#TashiaImoenTalk","GLOBAL",1)
+			 	 PlaySong(0)
+			 	 PlaySound("TashiaM1")
+             Interact(Player1)
+END
+
+IF
+  InParty(Myself)
+  InParty("Korgan")
+  Global("LE#TashiaKorganBanter","GLOBAL",2)
+  !StateCheck("Tashia",CD_STATE_NOTVALID)
+  !StateCheck("Korgan",CD_STATE_NOTVALID)
+  !See([ENEMY])
+THEN
+    RESPONSE #100
+             SetGlobal("LE#TashiaKorganBanter","GLOBAL",3)
+             Interact("Korgan")
+END
+
+IF
+  InParty(Myself)
+  Global("TashiaMatch","GLOBAL",1)
+  Global("TashiaRomanceActive","GLOBAL",2)
+  Global("LoveTalk","LOCALS",55)
+  !StateCheck("Tashia",CD_STATE_NOTVALID)
+  !See([ENEMY])
+THEN
+    RESPONSE #100
+             IncrementGlobal("LoveTalk","LOCALS",2)
+             RealSetGlobalTimer("TashiaRomance","GLOBAL",900)
+END
+
+IF
+  InParty(Myself)
+  Global("TashiaMatch","GLOBAL",1)
+  Global("TashiaRomanceActive","GLOBAL",2)
+  Global("LoveTalk","LOCALS",48)
+  !StateCheck("Tashia",CD_STATE_NOTVALID)
+  !See([ENEMY])
+THEN
+    RESPONSE #100
+             IncrementGlobal("LoveTalk","LOCALS",5)
+             RealSetGlobalTimer("TashiaRomance","GLOBAL",900)
+END
+
+IF
+  InParty(Myself)
+  Global("TashiaMatch","GLOBAL",1)
+  Global("TashiaRomanceActive","GLOBAL",2)
+  RealGlobalTimerExpired("TashiaRomance","GLOBAL")
+  !AreaType(DUNGEON)
+  CombatCounter(0)
+  !StateCheck("Tashia",CD_STATE_NOTVALID)
+  !See([ENEMY])
+  OR(3)
+    Global("LoveTalk","LOCALS",57)
+    Global("LoveTalk","LOCALS",59)
+    Global("LoveTalk","LOCALS",61)
+THEN
+     RESPONSE #100
+             IncrementGlobal("LoveTalk","LOCALS",1)
+			 	 PlaySong(0)
+			 	 PlaySound("TashiaM1")
+             Interact(Player1)
+END
+
+IF
+  InParty(Myself)
+  Global("TashiaMatch","GLOBAL",1)
+  Global("TashiaRomanceActive","GLOBAL",2)
+  RealGlobalTimerExpired("TashiaRomance","GLOBAL")
+  !AreaType(DUNGEON)
+  CombatCounter(0)
+  Global("LoveTalk","LOCALS",53)
+  !StateCheck("Tashia",CD_STATE_NOTVALID)
+  !See([ENEMY])
+  PartyRested()
+THEN
+     RESPONSE #100
+              IncrementGlobal("Lovetalk","LOCALS",1)
+			 	  PlaySong(0)
+  			 	  PlaySound("TashiaM2")
+              Interact(Player1)
+END
+
+IF
+  InParty(Myself)
+  Global("TashiaMatch","GLOBAL",1)
+  Global("TashiaRomanceActive","GLOBAL",2)
+  RealGlobalTimerExpired("TashiaRomance","GLOBAL")
+  !AreaType(DUNGEON)
+  CombatCounter(0)
+  Global("LoveTalk","LOCALS",55)
+  !StateCheck("Tashia",CD_STATE_NOTVALID)
+  !See([ENEMY])
+	TimeOfDay(DUSK)
+  AreaType(FOREST)
+THEN
+     RESPONSE #100
+              IncrementGlobal("Lovetalk","LOCALS",1)
+			 	  PlaySong(0)
+			 	  PlaySound("TashiaM2")
+              Interact(Player1)
+END
+
+// Class-based LoveTalks
+/* Required Globals:
+     All checks with GlobalGT, 0
+
+     Paladin Stronghold: PaladinOrder
+     Temple: JoinTalos / JoinLathander / JoinHelm
+     Ranger: RangerProtector
+     Druid: DruidStrongHold
+     Bard: PlayHouse
+     Thief: PlayerThiefGuild
+     Keep: PCKeepOwner
+     Sphere: PCSphere */
+
+
+   // Stronghold Selftalk
+
+IF
+  InParty(Myself)
+  !Class(Player1,SORCERER)
+  !Class(Player1,MONK)
+  !OR(2)
+        !Class(Player1,FIGHTER)
+        Kit(Player1,BARBARIAN)
+  Global("TashiaRomanceActive","GLOBAL",2)
+  GlobalGT("LoveTalk","LOCALS",52)
+  Global("PlayerHasStronghold","GLOBAL",1)
+  Global("LE#StrongholdSelfTalk","GLOBAL",0)
+  CombatCounter(0)
+  !See([ENEMY])
+  !StateCheck("Tashia",CD_STATE_NOTVALID)
+THEN
+    RESPONSE #100
+             SetGlobal("LE#StrongholdSelfTalk","GLOBAL",1)
+             ActionOverride(Player1,StartDialogue("Player1",Player1))
+END
+
+   // StrongHoldless ones: Monk, Barbarian, Sorcerer
+IF
+  InParty(Myself)
+  OR(2)
+       Class(Player1,MONK)
+       Class(Player1,SORCERER)
+       !OR(2)
+           !Class(Player1,FIGHTER)
+           !Kit(Player1,BARBARIAN)
+  Global("TashiaRomanceActive","GLOBAL",2)
+  GlobalGT("LoveTalk","LOCALS",52)
+  Global("LE#TashiaClassLovetalkTimerSet","GLOBAL",0)
+THEN
+    RESPONSE #100
+             SetGlobal("LE#TashiaClassLovetalkTimerSet","GLOBAL",1)
+             RealSetGlobalTimer("LE#TashiaClassTalkTimer","GLOBAL",500)
+END
+
+   // The Monk Talk
+IF
+  InParty(Myself)
+  Class(Player1,MONK)
+  Global("TashiaRomanceActive","GLOBAL",2)
+  RealGlobalTimerExpired("LE#TashiaClassTalkTimer","GLOBAL")
+  AreaType(OUTDOOR)
+  AreaType(FOREST)
+  PartyRested()
+  CombatCounter(0)
+  Global("LE#TashiaClassLoveTalk","GLOBAL",0)
+  !See([ENEMY])
+  !StateCheck("Tashia",CD_STATE_NOTVALID)
+THEN
+    RESPONSE #100
+             SetGlobal("LE#TashiaClassLoveTalk","GLOBAL",1)
+			 	 PlaySong(0)
+			 	 PlaySound("TashiaM1")
+             Interact(Player1)
+END
+
+   // The Barbarian Talk
+IF
+  InParty(Myself)
+  Class(Player1,FIGHTER)
+  Kit(Player1,BARBARIAN)
+  Global("TashiaRomanceActive","GLOBAL",2)
+  RealGlobalTimerExpired("LE#TashiaClassTalkTimer","GLOBAL")
+  AreaType(OUTDOOR)
+  AreaType(FOREST)
+  CombatCounter(0)
+  Global("LE#TashiaClassLoveTalk","GLOBAL",0)
+  !See([ENEMY])
+  !StateCheck("Tashia",CD_STATE_NOTVALID)
+THEN
+    RESPONSE #100
+             SetGlobal("LE#TashiaClassLoveTalk","GLOBAL",1)
+			 	 PlaySong(0)
+			 	 PlaySound("TashiaM2")
+             Interact(Player1)
+END
+
+   // The Sorcerer Talk
+IF
+  InParty(Myself)
+  Class(Player1,SORCERER)
+  Global("TashiaRomanceActive","GLOBAL",2)
+  RealGlobalTimerExpired("LE#TashiaClassTalkTimer","GLOBAL")
+  CombatCounter(0)
+  Global("LE#TashiaClassLoveTalk","GLOBAL",0)
+  !See([ENEMY])
+  !StateCheck("Tashia",CD_STATE_NOTVALID)
+THEN
+    RESPONSE #100
+             SetGlobal("LE#TashiaClassLoveTalk","GLOBAL",1)
+			 	 PlaySong(0)
+			 	 PlaySound("TashiaM1")
+             Interact(Player1)
+END
+
+   // Paladin Talk
+
+IF
+  InParty(Myself)
+  Global("TashiaRomanceActive","GLOBAL",2)
+  CombatCounter(0)
+  Global("LE#TashiaClassLoveTalk","GLOBAL",0)
+  GlobalGT("PaladinOrder","GLOBAL",0)
+  GlobalGT("LoveTalk","LOCALS",52)
+  AreaCheck("AR0903")
+  !See([ENEMY])
+  !StateCheck("Tashia",CD_STATE_NOTVALID)
+THEN
+    RESPONSE #100
+             SetGlobal("LE#TashiaClassLoveTalk","GLOBAL",1)
+			 	 PlaySong(0)
+			 	 PlaySound("TashiaM1")
+             Interact(Player1)
+END
+
+   // Thief Talk
+IF
+  InParty(Myself)
+  Global("TashiaRomanceActive","GLOBAL",2)
+  Global("LE#TashiaClassLoveTalk","GLOBAL",0)
+  GlobalGT("PlayerThiefGuild","GLOBAL",0)
+  GlobalGT("LoveTalk","LOCALS",52)
+  AreaCheck("AR0322")
+  CombatCounter(0)
+  !See([ENEMY])
+  !StateCheck("Tashia",CD_STATE_NOTVALID)
+THEN
+    RESPONSE #100
+             SetGlobal("LE#TashiaClassLoveTalk","GLOBAL",1)
+			 	 PlaySong(0)
+			 	 PlaySound("TashiaM1")
+             Interact(Player1)
+END
+
+   // Bard Talk
+IF
+  InParty(Myself)
+  Global("TashiaRomanceActive","GLOBAL",2)
+  Global("LE#TashiaClassLoveTalk","GLOBAL",0)
+  GlobalGT("LoveTalk","LOCALS",52)
+  GlobalGT("Playhouse","GLOBAL",0)
+  AreaCheck("AR0523")
+  CombatCounter(0)
+  !See([ENEMY])
+  !StateCheck("Tashia",CD_STATE_NOTVALID)
+THEN
+    RESPONSE #100
+             SetGlobal("LE#TashiaClassLoveTalk","GLOBAL",1)
+			 	 PlaySong(0)
+			 	 PlaySound("TashiaM2")
+             Interact(Player1)
+END
+
+   // Fighter Talk
+IF
+  InParty(Myself)
+  Global("TashiaRomanceActive","GLOBAL",2)
+  Global("LE#TashiaClassLoveTalk","GLOBAL",0)
+  GlobalGT("LoveTalk","LOCALS",52)
+  !Kit(Player1,BARBARIAN)
+  !Class(Player1,MONK)
+  GlobalGT("PCKeepOwner","GLOBAL",0)
+  AreaCheck("AR1306")
+  CombatCounter(0)
+  !See([ENEMY])
+  !StateCheck("Tashia",CD_STATE_NOTVALID)
+THEN
+    RESPONSE #100
+             SetGlobal("LE#TashiaClassLoveTalk","GLOBAL",1)
+			 	 PlaySong(0)
+			 	 PlaySound("TashiaM1")
+             Interact(Player1)
+END
+
+   // Mage Talk
+IF
+  InParty(Myself)
+  Global("TashiaRomanceActive","GLOBAL",2)
+  CombatCounter(0)
+  Global("LE#TashiaClassLoveTalk","GLOBAL",0)
+  GlobalGT("LoveTalk","LOCALS",52)
+  !Class(Player1,SORCERER)
+  GlobalGT("PCSphere","GLOBAL",0)
+  AreaCheck("AR0411")
+  !See([ENEMY])
+  !StateCheck("Tashia",CD_STATE_NOTVALID)
+THEN
+    RESPONSE #100
+             SetGlobal("LE#TashiaClassLoveTalk","GLOBAL",1)
+			 	 PlaySong(0)
+			 	 PlaySound("TashiaM1")
+             Interact(Player1)
+END
+
+   // Druid Talk
+IF
+  InParty(Myself)
+  Global("TashiaRomanceActive","GLOBAL",2)
+  CombatCounter(0)
+  Global("LE#TashiaClassLoveTalk","GLOBAL",0)
+  GlobalGT("LoveTalk","LOCALS",52)
+  GlobalGT("DruidStrongHold","GLOBAL",0)
+  AreaCheck("AR1900")
+  !See([ENEMY])
+  !StateCheck("Tashia",CD_STATE_NOTVALID)
+THEN
+    RESPONSE #100
+             SetGlobal("LE#TashiaClassLoveTalk","GLOBAL",1)
+			 	 PlaySong(0)
+			 	 PlaySound("TashiaM1")
+             Interact(Player1)
+END
+
+IF
+	InParty(Myself)
+  Global("TashiaRomanceActive","GLOBAL",2)
+  CombatCounter(0)
+  Global("LE#TashiaClassLoveTalk","GLOBAL",3)
+  GlobalGT("DruidStrongHold","GLOBAL",0)
+  AreaCheck("AR1900")
+  !See([ENEMY])
+  !StateCheck("Tashia",CD_STATE_NOTVALID)
+THEN
+    RESPONSE #100
+             SetGlobal("LE#TashiaClassLoveTalk","GLOBAL",4)
+             Interact(Player1)
+END
+
+   // Ranger Talk
+IF
+  InParty(Myself)
+  Global("TashiaRomanceActive","GLOBAL",2)
+  CombatCounter(0)
+  Global("LE#TashiaClassLoveTalk","GLOBAL",0)
+  GlobalGT("LoveTalk","LOCALS",52)
+  AreaCheck("AR1100")
+  GlobalGT("RangerProtector","GLOBAL",0)
+  !See([ENEMY])
+  !StateCheck("Tashia",CD_STATE_NOTVALID)
+THEN
+    RESPONSE #100
+             SetGlobal("LE#TashiaClassLoveTalk","GLOBAL",1)
+			 	 PlaySong(0)
+			 	 PlaySound("TashiaM2")
+             Interact(Player1)
+END
+
+   // Cleric Talk (3 Triggers: 1 for each of the Temples)
+IF
+  InParty(Myself)
+  Global("TashiaRomanceActive","GLOBAL",2)
+  CombatCounter(0)
+  Global("LE#TashiaClassLoveTalk","GLOBAL",0)
+  GlobalGT("LoveTalk","LOCALS",52)
+  AreaCheck("AR0904")
+  GlobalGT("JoinTalos","GLOBAL",0)
+  !See([ENEMY])
+  !StateCheck("Tashia",CD_STATE_NOTVALID)
+THEN
+    RESPONSE #100
+             SetGlobal("LE#TashiaClassLoveTalk","GLOBAL",1)
+             SetGlobal("LE#TashiaClericTalk","GLOBAL",1)
+			 	 PlaySong(0)
+			 	 PlaySound("TashiaM1")
+             ActionOverride(Player1,StartDialogue("Player1",Player1))
+END
+
+IF
+  InParty(Myself)
+  Global("TashiaRomanceActive","GLOBAL",2)
+  CombatCounter(0)
+  Global("LE#TashiaClassLoveTalk","GLOBAL",0)
+  GlobalGT("LoveTalk","LOCALS",52)
+  AreaCheck("AR0902")
+  GlobalGT("JoinLathander","GLOBAL",0)
+  !See([ENEMY])
+  !StateCheck("Tashia",CD_STATE_NOTVALID)
+THEN
+    RESPONSE #100
+             SetGlobal("LE#TashiaClericTalk","GLOBAL",1)
+             SetGlobal("LE#TashiaClassLoveTalk","GLOBAL",1)
+			 	 PlaySong(0)
+			 	 PlaySound("TashiaM1")
+             ActionOverride(Player1,StartDialogue("Player1",Player1))
+END
+
+IF
+  InParty(Myself)
+  Global("TashiaRomanceActive","GLOBAL",2)
+  CombatCounter(0)
+  Global("LE#TashiaClassLoveTalk","GLOBAL",0)
+  GlobalGT("LoveTalk","LOCALS",52)
+  AreaCheck("AR0901")
+  GlobalGT("JoinHelm","GLOBAL",0)
+  !See([ENEMY])
+  !StateCheck("Tashia",CD_STATE_NOTVALID)
+THEN
+    RESPONSE #100
+             SetGlobal("LE#TashiaClericTalk","GLOBAL",1)
+             SetGlobal("LE#TashiaClassLoveTalk","GLOBAL",1)
+			 	 PlaySong(0)
+			 	 PlaySound("TashiaM1")
+             ActionOverride(Player1,StartDialogue("Player1",Player1))
+END
+
+// Skinner interject
+IF
+  InParty(Myself)
+  Global("LE#TashiaSkinnerInterject","GLOBAL",0)
+  AreaCheck("AR0502")
+THEN
+    RESPONSE #100
+             SetGlobal("LE#TashiaSkinnerInterject","GLOBAL",1)
+             Interact(Player1)
+END
+
+// Hurt talk
+IF
+  InParty(Myself)
+  Global("TashiaRomanceActive","GLOBAL",2)
+  CombatCounter(0)
+  HPPercentLT(Player1,25)
+  Global("LE#TashiaHurttalk","GLOBAL",0)
+  !See([ENEMY])
+  !StateCheck("Tashia",CD_STATE_NOTVALID)
+THEN
+    RESPONSE #100
+             SetGlobal("LE#TashiaHurtTalk","GLOBAL",1)
+             Interact(Player1)
+END
+
+// Gift Lovetalk
+IF
+  InParty(Myself)
+  Global("TashiaRomanceActive","GLOBAL",2)
+  CombatCounter(0)
+  AreaCheck("AR0700")
+  Global("LE#TashiaGiftLoveTalk","GLOBAL",0)
+  !See([ENEMY])
+  !StateCheck("Tashia",CD_STATE_NOTVALID)
+THEN
+    RESPONSE #100
+             SetGlobal("LE#TashiaGiftLoveTalk","GLOBAL",1)
+			 	 PlaySong(0)
+			 	 PlaySound("TashiaM2")
+             Interact(Player1)
+END
+
+IF
+  InParty(Myself)
+  Global("TashiaRomanceActive","GLOBAL",2)
+  CombatCounter(0)
+  AreaCheck("AR0713")
+  Global("LE#TashiaGiftLoveTalk","GLOBAL",2)
+  !See([ENEMY])
+  !StateCheck("Tashia",CD_STATE_NOTVALID)
+THEN
+    RESPONSE #100
+             SetGlobal("LE#TashiaGiftLoveTalk","GLOBAL",3)
+             ActionOverride(Player1,StartDialogue("Player1",Player1))
+END
+
+// Belmin Gergas Aftermath
+
+IF
+  InParty(Myself)
+  !Dead("Tashia")
+  GlobalTimerExpired("LE#TashiaBelminCowledTimer","GLOBAL")
+  OR(6)
+    AreaCheck("AR0300")
+    AreaCheck("AR0400")
+    AreaCheck("AR0500")
+    AreaCheck("AR0700")
+    AreaCheck("AR0900")
+    AreaCheck("AR1000")
+  Global("LE#TashiaBelmin","GLOBAL",4)
+  CombatCounter(0)
+  !See([ENEMY])
+  !StateCheck("Tashia",CD_STATE_NOTVALID)
+THEN
+    RESPONSE #100
+             ClearAllActions()
+             StartCutSceneMode()
+             CreateCreatureObjectOffScreen("LE#belm",Player1,0,0,0)
+             CreateCreatureObjectOffScreen("LE#cowl",Player1,0,0,0)
+             StartCutScene("LE#cstb3")
+END
+
+// Belt of Gender Switching
+
+IF
+	InParty(Myself)
+	!Dead("Tashia")
+	Global("TashiaRomanceActive","GLOBAL",2)
+	Global("LE#TashiaBeltLT","GLOBAL",0)
+	Global("TashiaMatch","GLOBAL",1)
+	HasItemEquipedReal("belt05",Player1)
+	Gender(Player1,FEMALE)
+  CombatCounter(0)
+  !See([ENEMY])
+  !StateCheck("Tashia",CD_STATE_NOTVALID)
+THEN
+    RESPONSE #100
+	SetGlobal("LE#TashiaBeltLT","GLOBAL",1)
+	 PlaySong(0)
+ 	 PlaySound("TashiaM2")
+	Interact(Player1)
+END
+
+// Spellhold Lovetalk
+IF
+  InParty(Myself)
+  !Dead("Tashia")
+  Global("TashiaRomanceActive","GLOBAL",1)
+  Global("TashiaMatch","GLOBAL",1)
+  OR(2)
+	AreaCheck("AR1512")
+	AreaCheck("AR1513")
+  Global("LE#TashiaSpellholdTimerSet","GLOBAL",0)
+THEN
+    RESPONSE #100
+	SetGlobal("LE#TashiaSpellholdTimerSet","GLOBAL",1)
+	RealSetGlobalTimer("LE#TashiaSpellholdTimer","GLOBAL",500)
+END
+
+
+IF
+  InParty(Myself)
+  !Dead("Tashia")
+  CombatCounter(0)
+  !See([ENEMY])
+  !StateCheck("Tashia",CD_STATE_NOTVALID)
+  OR(2)
+	AreaCheck("AR1512")
+	AreaCheck("AR1513")
+  RealGlobalTimerExpired("LE#TashiaSpellholdTimer","GLOBAL")
+  Global("LE#TashiaSpellholdLT","GLOBAL",0)
+THEN
+    RESPONSE #100
+	SetGlobal("LE#TashiaSpellholdLT","GLOBAL",1)
+ 	 PlaySong(0)
+	 PlaySound("TashiaM1")
+	Interact(Player1)
+END
+
+

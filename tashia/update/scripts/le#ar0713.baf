@@ -1,0 +1,10 @@
+IF
+  Global("LE#ShopkeepersSpawn","AR0713",0)
+  GlobalGT("LE#TashiaGiftLoveTalk","GLOBAL",0)
+THEN
+    RESPONSE #100
+      CreateCreature("LE#SHOP",[521.379],13)
+      CreateCreature("LE#AIMIL",[505.308],13)
+      SetGlobal("LE#ShopkeepersSpawn","AR0713",1)
+END
+

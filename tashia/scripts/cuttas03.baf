@@ -1,0 +1,10 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player1)
+        ClearAllActions()
+        DisplayStringHead("Tashia",@191) // No such index
+END
+
+

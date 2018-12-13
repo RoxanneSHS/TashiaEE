@@ -1,0 +1,13 @@
+IF
+  True()
+THEN
+    RESPONSE #100
+             FadeToColor([20.0],0)
+             ActionOverride("Tashia",LeaveAreaLUA("AR0713","",[561.425],6))
+             ActionOverride(Player1,LeaveAreaLUA("AR0713","",[597.404],6))
+             CreateCreature("LE#SHOP",[521.379],13)
+             CreateCreature("LE#AIMIL",[505.308],13)
+             FadeFromColor([20.0],0)
+             ActionOverride(Player1,StartDialogue("Player1",Player1))
+             EndCutSceneMode()
+END

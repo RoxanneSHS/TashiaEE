@@ -1,0 +1,17 @@
+IF
+    Detect([PC])
+    NumTimesTalkedTo(0)
+THEN
+    RESPONSE #100
+        MoveToObject("Tashia")
+        StartDialogueNoSet([PC])
+END
+
+IF
+    Detect([PC])
+    NumTimesTalkedToGT(0)
+    NumTimesTalkedToLT(3)
+THEN
+    RESPONSE #100
+        StartDialogueNoSet([PC])
+END

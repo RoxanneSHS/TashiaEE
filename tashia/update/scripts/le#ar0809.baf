@@ -1,0 +1,7 @@
+IF
+  Global("LE#TashiaVampire","GLOBAL",1)
+THEN
+    RESPONSE #100
+        CreateCreature("le#vtash",[1473.332],2)
+        SetGlobal("LE#TashiaVampire","GLOBAL",2)
+END

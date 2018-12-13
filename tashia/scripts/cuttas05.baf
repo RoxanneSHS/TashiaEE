@@ -1,0 +1,186 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player1)
+        FadeFromColor([30.0],0)
+        Wait(97)
+        FadeToColor([30.0],0)
+        ActionOverride("OBSERVE",DestroySelf())
+        Wait(1)
+        CreateCreature("taarilis",[520.1090],2)
+        CreateCreature("taevil",[475.1065],2)
+        CreateCreature("tasold01",[515.1185],3)
+        CreateCreature("tasold02",[345.1082],0)
+        CreateCreature("tavex",[560.1110],2)
+        CreateCreature("taelite",[760.750],2)
+        CreateCreature("taelite",[840.785],2)
+        CreateCreature("tamage",[800.455],1)
+        CreateCreature("tamage",[980.455],1)
+        CreateCreature("taelite",[1215.635],4)
+        CreateCreature("taelite",[1205.735],4)
+        Wait(1)
+        RestorePartyLocations()
+        MultiPlayerSync()
+        Wait(1)
+        FadeFromColor([30.0],0)
+        EndCutSceneMode()
+        RestParty()
+END
+
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId("taarilis")
+        MoveToPointNoInterrupt([900.950])
+        FaceObject("taevil")
+        Wait(5)
+        DisplayStringHead("taarilis",@193) // No such index
+        Wait(16)
+        DisplayStringHead("taarilis",@197) // No such index
+        Wait(8)
+        DisplayStringHead("taarilis",@199) // No such index
+        Wait(2)
+        MoveToObject("taevil")
+        Wait(6)
+        DisplayStringHead("taarilis",@201) // No such index
+        Wait(8)
+        DisplayStringHead("taarilis",@203) // No such index
+        Wait(4)
+        DisplayStringHead("taarilis",@204) // No such index
+        Wait(3)
+        DisplayStringHead("taarilis",@205) // No such index
+        CreateVisualEffectObject("SPDISPMA",Myself)
+        CreateVisualEffect("SPFLSRIN",[633.784])
+        CreateVisualEffect("SPFLSRIN",[985.988])
+        Wait(1)
+        CreateVisualEffect("SPFLSRIN",[633.784])
+        CreateVisualEffect("SPFLSRIN",[985.988])
+        Wait(1)
+        CreateVisualEffect("SPFLSRIN",[633.784])
+        CreateVisualEffect("SPFLSRIN",[985.988])
+        Wait(1)
+        CreateVisualEffect("SPFLSRIN",[633.784])
+        CreateVisualEffect("SPFLSRIN",[985.988])
+        CreateVisualEffect("SPWRDFLD",[633.784])
+        CreateVisualEffect("SPWRDFLD",[985.988])
+        PlaySound("EFF_M23B")
+        CreateVisualEffectObject("spflesh2",Myself)
+        CreateVisualEffectObject("spfleshs",Myself)
+        DisplayStringHead("taarilis",@207) // No such index
+        Wait(1)
+        CreateVisualEffect("ICFIRSDI",[633.784])
+        CreateVisualEffect("ICFIRSDI",[985.988])
+        CreateVisualEffectObject("SPGRWHRL",Myself)
+        SmallWait(5)
+        CreateVisualEffect("ICFIRSDI",[633.784])
+        CreateVisualEffect("ICFIRSDI",[985.988])
+        SmallWait(5)
+        CreateVisualEffect("ICFIRSDI",[633.784])
+        CreateVisualEffect("ICFIRSDI",[985.988])
+        SmallWait(5)
+        CreateVisualEffect("ICFIRSDI",[633.784])
+        CreateVisualEffect("ICFIRSDI",[985.988])
+        SmallWait(5)
+        CreateVisualEffect("ICFIRSDI",[633.784])
+        CreateVisualEffect("ICFIRSDI",[985.988])
+        DisplayStringHead("taarilis",@208) // No such index
+        SmallWait(5)
+        CreateVisualEffect("ICFIRSDI",[633.784])
+        CreateVisualEffect("ICFIRSDI",[985.988])
+        SmallWait(5)
+        CreateVisualEffect("ICFIRSDI",[633.784])
+        CreateVisualEffect("ICFIRSDI",[985.988])
+        SmallWait(5)
+        CreateVisualEffect("ICFIRSDI",[633.784])
+        CreateVisualEffect("ICFIRSDI",[985.988])
+        SmallWait(5)
+        CreateVisualEffect("ICFIRSDI",[633.784])
+        CreateVisualEffect("ICFIRSDI",[985.988])
+        SmallWait(5)
+        CreateVisualEffect("ICFIRSDI",[633.784])
+        CreateVisualEffect("ICFIRSDI",[985.988])
+        SmallWait(5)
+        CreateVisualEffect("ICFIRSDI",[633.784])
+        CreateVisualEffect("ICFIRSDI",[985.988])
+        SmallWait(5)
+        CreateVisualEffect("SPFIREPI",[633.784])
+        CreateVisualEffect("SPFIREPI",[985.988])
+        DisplayStringHead("taarilis",@210) // No such index
+        ReallyForceSpell("taevil",BEHOLDER_BLAST_VISUAL)
+        Wait(4)
+        DisplayStringHead("taarilis",@212) // No such index
+        Wait(4)
+        DisplayStringHead("taarilis",@213) // No such index
+        Wait(7)
+        DisplayStringHead("taarilis",@215) // No such index
+        Wait(6)
+        MoveToPointNoInterrupt([800.755])
+        DestroySelf()
+END
+
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId("taevil")
+        MoveToPointNoInterrupt([800.1020])
+        Wait(1)
+        FaceObject("taarilis")
+        DisplayStringHead("taevil",@192) // No such index
+        Wait(3)
+        FaceObject("taarilis")
+        Wait(4)
+        DisplayStringHead("taevil",@194) // No such index
+        Wait(4)
+        DisplayStringHead("taevil",@195) // No such index
+        Wait(4)
+        DisplayStringHead("taevil",@196) // No such index
+        Wait(8)
+        DisplayStringHead("taevil",@198) // No such index
+        Wait(7)
+        DisplayStringHead("taevil",@200) // No such index
+        RunAwayFrom("taarilis",15)
+        FaceObject("taarilis")
+        Wait(9)
+        DisplayStringHead("taevil",@202) // No such index
+        Wait(13)
+        SmallWait(5)
+        DisplayStringHead("taevil",@206) // No such index
+        Wait(1)
+        MoveToPoint([500.1145])
+        Wait(1)
+        FaceObject("taarilis")
+        DisplayStringHead("taevil",@209) // No such index
+        Wait(2)
+        SmallWait(5)
+        PlaySound("EFF_M23C")
+        CreateVisualEffectObject("ICFIRSDI",Myself)
+        CreateVisualEffectObject("SPFIREPI",Myself)
+        CreateVisualEffectObject("SPDEATH3",Myself)
+        DisplayStringHead("taevil",@211) // No such index
+        ScreenShake([500.1145],7)
+        SmallWait(5)
+        PlayDead(355)
+        DestroySelf()
+END
+
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId("tavex")
+        Wait(76)
+        MoveToPointNoInterrupt([835.1100])
+        DisplayStringHead(Myself,@214) // No such index
+        Wait(7)
+        DisplayStringHead(Myself,@216) // No such index
+        Wait(1)
+        MoveToPointNoInterrupt([500.1145])
+        Wait(1)
+        MoveToPointNoInterrupt([800.755])
+        DestroySelf()
+END
+
+

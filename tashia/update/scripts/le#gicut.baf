@@ -1,0 +1,20 @@
+IF
+  True()
+THEN
+    RESPONSE #100
+    CutSceneId("Tashia")
+    MoveToPoint([409.325])
+END
+
+
+IF
+  True()
+THEN
+    RESPONSE #100
+    CutSceneId("LE#SHOP")
+    MoveToPoint([405.320])
+    Wait(5)
+    ActionOverride("LE#AIMIL",MoveToObject(Player1))
+    ActionOverride("LE#AIMIL",StartDialogue("LE#AIMIL",Player1))
+    EndCutSceneMode()
+END

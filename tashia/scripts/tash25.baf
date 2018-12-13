@@ -1,0 +1,477 @@
+IF
+    InParty(Myself)
+    PartyRested()
+    Detect(Player1)
+    GlobalLT("ExpLoveTalk","LOCALS",6)
+    Global("PillowTalk","LOCALS",0)
+THEN
+    RESPONSE #66
+        SetGlobal("SleepComment","LOCALS",1)
+        Continue()
+    RESPONSE #34
+        SetGlobal("SleepComment","LOCALS",3)
+        Continue()
+END
+
+IF
+    InParty(Myself)
+    PartyRested()
+    Detect(Player1)
+    GlobalLT("ExpLoveTalk","LOCALS",6)
+    Global("PillowTalk","LOCALS",1)
+THEN
+    RESPONSE #100
+        SetGlobal("SleepComment","LOCALS",1)
+        Continue()
+END
+
+IF
+    InParty(Myself)
+    PartyRested()
+    Detect(Player1)
+    GlobalGT("ExpLoveTalk","LOCALS",9)
+    Global("DrowTalk","LOCALS",0)
+    !Gender(Player1,FEMALE)
+THEN
+    RESPONSE #33
+        SetGlobal("SleepComment","LOCALS",1)
+        Continue()
+    RESPONSE #33
+        SetGlobal("SleepComment","LOCALS",2)
+        Continue()
+    RESPONSE #34
+        SetGlobal("SleepComment","LOCALS",4)
+        Continue()
+END
+
+IF
+    InParty(Myself)
+    PartyRested()
+    Detect(Player1)
+    GlobalGT("ExpLoveTalk","LOCALS",9)
+    Global("DrowTalk","LOCALS",0)
+    Gender(Player1,FEMALE)
+THEN
+    RESPONSE #33
+        SetGlobal("SleepComment","LOCALS",1)
+        Continue()
+    RESPONSE #33
+        SetGlobal("SleepComment","LOCALS",2)
+        Continue()
+    RESPONSE #34
+        SetGlobal("SleepComment","LOCALS",5)
+        Continue()
+END
+
+IF
+    InParty(Myself)
+    PartyRested()
+    Detect(Player1)
+    GlobalGT("ExpLoveTalk","LOCALS",9)
+    Global("DrowTalk","LOCALS",1)
+THEN
+    RESPONSE #60
+        SetGlobal("SleepComment","LOCALS",1)
+        Continue()
+    RESPONSE #40
+        SetGlobal("SleepComment","LOCALS",2)
+        Continue()
+END
+
+IF
+    Global("SleepComment","LOCALS",1)
+THEN
+    RESPONSE #13
+        DisplayStringHead(Myself,@63) // No such index
+        SetGlobal("SleepComment","LOCALS",0)
+    RESPONSE #10
+        DisplayStringHead(Myself,@64) // No such index
+        SetGlobal("SleepComment","LOCALS",0)
+    RESPONSE #13
+        SetGlobal("SleepComment","LOCALS",0)
+        DisplayStringHead(Myself,@65) // No such index
+    RESPONSE #7
+        SetGlobal("SleepComment","LOCALS",0)
+        DisplayStringHead(Myself,@66) // No such index
+    RESPONSE #10
+        SetGlobal("SleepComment","LOCALS",0)
+        DisplayStringHead(Myself,@67) // No such index
+        SmallWait(25)
+        DisplayStringHead(Myself,@68) // No such index
+    RESPONSE #13
+        SetGlobal("SleepComment","LOCALS",0)
+        DisplayStringHead(Myself,@69) // No such index
+        SmallWait(25)
+        DisplayStringHead(Myself,@70) // No such index
+    RESPONSE #12
+        SetGlobal("SleepComment","LOCALS",0)
+        DisplayStringHead(Myself,@71) // No such index
+    RESPONSE #12
+        SetGlobal("SleepComment","LOCALS",0)
+        DisplayStringHead(Myself,@72) // No such index
+        Wait(3)
+        DisplayStringHead(Myself,@73) // No such index
+    RESPONSE #10
+        SetGlobal("SleepComment","LOCALS",0)
+        DisplayStringHead(Myself,@74) // No such index
+        Wait(2)
+        DisplayStringHead(Player1,@75) // No such index
+        Wait(2)
+        DisplayStringHead(Myself,@76) // No such index
+END
+
+IF
+    Global("SleepComment","LOCALS",2)
+THEN
+    RESPONSE #25
+        SetGlobal("SleepComment","LOCALS",0)
+        DisplayStringHead(Myself,@84) // No such index
+    RESPONSE #13
+        SetGlobal("SleepComment","LOCALS",0)
+        DisplayStringHead(Myself,@85) // No such index
+        SmallWait(25)
+        DisplayStringHead(Player1,@86) // No such index
+        SmallWait(15)
+        DisplayStringHead(Myself,@87) // No such index
+        SmallWait(15)
+        DisplayStringHead(Player1,@88) // No such index
+        SmallWait(15)
+        DisplayStringHead(Myself,@89) // No such index
+        SmallWait(2)
+        DisplayStringHead(Myself,@90) // No such index
+    RESPONSE #25
+        SetGlobal("SleepComment","LOCALS",0)
+        DisplayStringHead(Myself,@91) // No such index
+    RESPONSE #25
+        SetGlobal("SleepComment","LOCALS",0)
+        DisplayStringHead(Myself,@92) // No such index
+        Wait(3)
+        DisplayStringHead([PC],@93) // No such index
+        Wait(2)
+        DisplayStringHead(Myself,@94) // No such index
+    RESPONSE #12
+        SetGlobal("SleepComment","LOCALS",0)
+        PlaySound("taundies")
+        DisplayStringHead(Myself,@95) // No such index
+        SmallWait(3)
+        DisplayStringHead(Myself,@96) // No such index
+END
+
+IF
+    Global("SleepComment","LOCALS",3)
+THEN
+    RESPONSE #100
+        SetGlobal("SleepComment","LOCALS",0)
+        SetGlobal("PillowTalk","LOCALS",1)
+        StartCutSceneMode()
+        MoveViewObject("Tashia",INSTANT)
+        FaceObject(Player1)
+        DisplayStringHead(Myself,@77) // No such index
+        Wait(3)
+        DisplayStringHead(Myself,@78) // No such index
+        Wait(2)
+        DisplayStringHead(Player1,@79) // No such index
+        Wait(2)
+        DisplayStringHead(Myself,@80) // No such index
+        Wait(2)
+        DisplayStringHead(Player1,@81) // No such index
+        Wait(2)
+        DisplayStringHead(Myself,@82) // No such index
+        Wait(3)
+        DisplayStringHead(Myself,@83) // No such index
+        EndCutSceneMode()
+END
+
+IF
+    Global("SleepComment","LOCALS",4)
+THEN
+    RESPONSE #100
+        SetGlobal("SleepComment","LOCALS",0)
+        SetGlobal("DrowTalk","LOCALS",1)
+        StartCutSceneMode()
+        MoveViewObject("Tashia",INSTANT)
+        FaceObject(Player1)
+        DisplayStringHead(Myself,@97) // No such index
+        Wait(3)
+        DisplayStringHead(Player1,@99) // No such index
+        Wait(3)
+        DisplayStringHead(Myself,@100) // No such index
+        Wait(5)
+        DisplayStringHead(Player1,@101) // No such index
+        Wait(2)
+        DisplayStringHead(Myself,@102) // No such index
+        EndCutSceneMode()
+END
+
+IF
+    Global("SleepComment","LOCALS",5)
+THEN
+    RESPONSE #100
+        SetGlobal("SleepComment","LOCALS",0)
+        SetGlobal("DrowTalk","LOCALS",1)
+        StartCutSceneMode()
+        MoveViewObject("Tashia",INSTANT)
+        FaceObject(Player1)
+        DisplayStringHead(Myself,@98) // No such index
+        Wait(3)
+        DisplayStringHead(Player1,@99) // No such index
+        Wait(3)
+        DisplayStringHead(Myself,@100) // No such index
+        Wait(5)
+        DisplayStringHead(Player1,@101) // No such index
+        Wait(2)
+        DisplayStringHead(Myself,@102) // No such index
+        EndCutSceneMode()
+END
+
+IF
+    AreaCheck("AR3001")
+    Global("WKComment","LOCALS",0)
+THEN
+    RESPONSE #100
+        SetGlobal("WKComment","LOCALS",1)
+        DisplayStringHead(Myself,@52) // No such index
+        Wait(3)
+        DisplayStringHead(Myself,@53) // No such index
+END
+
+IF
+    AreaCheck("AR4500")
+    Global("PlaneComment","LOCALS",0)
+    InParty(Myself)
+THEN
+    RESPONSE #100
+        SetGlobal("PlaneComment","LOCALS",1)
+        DisplayStringHead(Myself,@54) // No such index
+        Wait(3)
+        DisplayStringHead(Myself,@55) // No such index
+        Wait(3)
+        DisplayStringHead(Myself,@56) // No such index
+END
+
+IF
+    AreaCheck("AR5201")
+    Global("YagaComment","LOCALS",0)
+    CombatCounter(0)
+    !See([ENEMY])
+THEN
+    RESPONSE #100
+        SetGlobal("YagaComment","LOCALS",1)
+        DisplayStringHead(Myself,@57) // No such index
+        Wait(3)
+        DisplayStringHead(Myself,@58) // No such index
+END
+
+IF
+    AreaCheck("AR5013")
+    Global("SewerComment","LOCALS",0)
+THEN
+    RESPONSE #100
+        SetGlobal("SewerComment","LOCALS",1)
+        DisplayStringHead(Myself,@59) // No such index
+        Wait(3)
+        DisplayStringHead(Myself,@60) // No such index
+END
+
+IF
+    AreaCheck("AR5006")
+    Global("PrisonComment","LOCALS",0)
+THEN
+    RESPONSE #100
+        SetGlobal("PrisonComment","LOCALS",1)
+        DisplayStringHead(Myself,@61) // No such index
+        Wait(3)
+        DisplayStringHead(Myself,@62) // No such index
+END
+
+IF
+    Global("TashiaWink","LOCALS",1)
+THEN
+    RESPONSE #100
+        SetGlobal("TashiaWink","LOCALS",2)
+        DisplayStringHead(Myself,@51) // No such index
+        Continue()
+END
+
+IF
+    Global("TashiaSummoned","GLOBAL",1)
+    Global("SpokeToPlayer","LOCALS",0)
+THEN
+    RESPONSE #100
+        StartDialogueNoSet([PC])
+        SetGlobal("SpokeToPlayer","LOCALS",1)
+END
+
+IF
+    Allegiance(Myself,ENEMY)
+    !InParty(Myself)
+    Global("NPCFight","LOCALS",0)
+THEN
+    RESPONSE #100
+        SetGlobal("NPCFight","LOCALS",1)
+        ChangeAIScript("wtarsgt",DEFAULT)
+        ChangeAIScript("mage16c",SPECIFICS) // Khollynnus Paac
+        ChangeAIScript("useitem",GENERAL)
+        SetDialog("")
+        Continue()
+END
+
+IF
+    Allegiance(Myself,NEUTRAL)
+    AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+    RESPONSE #100
+        ChangeAIScript("mage16c",SPECIFICS) // Khollynnus Paac
+        ChangeAIScript("wtarsgt",DEFAULT)
+        ChangeAIScript("useitem",GENERAL)
+        Enemy()
+        Continue()
+END
+
+IF
+    OR(2)
+        GlobalGT("LoveTalk","LOCALS",47)
+        Global("TashiaRomanceActive","GLOBAL",2)
+    Global("ExpLoveTalk","LOCALS",0)
+THEN
+    RESPONSE #100
+        SetGlobal("TashiaRomanceActive","GLOBAL",2)
+        SetGlobal("ExpLoveTalk","LOCALS",1)
+        RealSetGlobalTimer("TashiaRomance","GLOBAL",2400)
+END
+
+IF
+    InParty(Myself)
+    RealGlobalTimerExpired("TashiaRomance","GLOBAL")
+    Global("TashiaRomanceActive","GLOBAL",2)
+    PartyRested()
+    Detect(Player1)
+    CombatCounter(0)
+    OR(4)
+        Global("ExpLoveTalk","LOCALS",1)
+        Global("ExpLoveTalk","LOCALS",11)
+        Global("ExpLoveTalk","LOCALS",13)
+        Global("ExpLoveTalk","LOCALS",15)
+THEN
+    RESPONSE #100
+        RealSetGlobalTimer("TashiaRomance","GLOBAL",10)
+END
+
+IF
+    InParty(Myself)
+    RealGlobalTimerExpired("TashiaRomance","GLOBAL")
+    Global("TashiaRomanceActive","GLOBAL",2)
+    !AreaType(DUNGEON)
+    Detect(Player1)
+    CombatCounter(0)
+    OR(2)
+        Global("ExpLoveTalk","LOCALS",1)
+        Global("ExpLoveTalk","LOCALS",11)
+    !See([ENEMY])
+    !Range([NEUTRAL],10)
+THEN
+    RESPONSE #100
+        IncrementGlobal("ExpLoveTalk","LOCALS",1)
+        PlaySong(0)
+        PlaySound("TashiaM1")
+        Interact(Player1)
+END
+
+IF
+    InParty(Myself)
+    RealGlobalTimerExpired("TashiaRomance","GLOBAL")
+    Global("TashiaRomanceActive","GLOBAL",2)
+    !AreaType(DUNGEON)
+    Detect(Player1)
+    CombatCounter(0)
+	 Global("ExpLoveTalk","LOCALS",13)
+    !See([ENEMY])
+    !Range([NEUTRAL],10)
+THEN
+    RESPONSE #100
+        IncrementGlobal("ExpLoveTalk","LOCALS",1)
+        PlaySong(0)
+        PlaySound("TashiaM2")
+        Interact(Player1)
+END
+
+
+IF
+    InParty(Myself)
+    RealGlobalTimerExpired("TashiaRomance","GLOBAL")
+    OR(7)
+        Global("ExpLoveTalk","LOCALS",2)
+        Global("ExpLoveTalk","LOCALS",4)
+        Global("ExpLoveTalk","LOCALS",6)
+        Global("ExpLoveTalk","LOCALS",8)
+        Global("ExpLoveTalk","LOCALS",10)
+        Global("ExpLoveTalk","LOCALS",12)
+        Global("ExpLoveTalk","LOCALS",14)
+THEN
+    RESPONSE #100
+        IncrementGlobal("ExpLoveTalk","LOCALS",1)
+        RealSetGlobalTimer("TashiaRomance","GLOBAL",2400)
+END
+
+IF
+    Global("LovedOne","GLOBAL",16)
+    Global("ExpLoveTalk","LOCALS",3)
+    InParty(Myself)
+    Global("TashiaRomanceActive","GLOBAL",2)
+    Detect(Player1)
+    CombatCounter(0)
+THEN
+    RESPONSE #100
+        IncrementGlobal("ExpLoveTalk","LOCALS",1)
+        PlaySong(0)
+        PlaySound("TashiaM1")
+        Interact(Player1)
+END
+
+IF
+    PartyRested()
+    Global("ExpLoveTalk","LOCALS",7)
+    InParty(Myself)
+    Global("TashiaRomanceActive","GLOBAL",2)
+    Detect(Player1)
+    CombatCounter(0)
+THEN
+    RESPONSE #100
+        IncrementGlobal("ExpLoveTalk","LOCALS",1)
+        PlaySong(0)
+        PlaySound("TashiaM1")
+        Interact(Player1)
+END
+
+IF
+    Global("SaradushSacked","GLOBAL",1)
+    Global("ExpLoveTalk","LOCALS",9)
+    InParty(Myself)
+    Global("TashiaRomanceActive","GLOBAL",2)
+    Detect(Player1)
+    PartyRested()
+    CombatCounter(0)
+THEN
+    RESPONSE #100
+        IncrementGlobal("ExpLoveTalk","LOCALS",1)
+        PlaySong(0)
+        PlaySound("TashiaM1")
+        Interact(Player1)
+END
+
+IF
+    Global("ChallengesDone","GLOBAL",1)
+    Global("ExpLoveTalk","LOCALS",15)
+    InParty(Myself)
+    Global("TashiaRomanceActive","GLOBAL",2)
+    See(Player1)
+    CombatCounter(0)
+THEN
+    RESPONSE #100
+        IncrementGlobal("ExpLoveTalk","LOCALS",1)
+        PlaySong(0)
+        PlaySound("TashiaM2")        
+		  Interact(Player1)
+END
+
+

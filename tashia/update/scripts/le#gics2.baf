@@ -1,0 +1,19 @@
+IF
+  True()
+THEN
+    RESPONSE #100
+             CutSceneId("Tashia")
+             MoveToObject(Player1)
+             Wait(2)
+             Interact(Player1)
+             EndCutSceneMode()
+END
+
+IF
+  True()
+THEN
+    RESPONSE #100
+             CutSceneId("LE#SHOP")
+             Wait(1)
+             MoveToPoint([525.379])
+END

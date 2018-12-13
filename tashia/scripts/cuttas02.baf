@@ -1,0 +1,41 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player1)
+        ClearAllActions()
+        StartCutSceneMode()
+        MoveViewObject("Tashia",INSTANT)
+        ActionOverride("Tashia",FaceObject(Player1))
+        Wait(2)
+        DisplayStringHead("Tashia",@187) // No such index
+        Wait(3)
+        CreateVisualEffectObject("SPCLOUD1","Tashia")
+        CreateVisualEffectObject("SPCLOUD2","Tashia")
+        Wait(1)
+        ActionOverride("Tashia",Polymorph(LICH))
+        CreateVisualEffectObject("SPCLOUD1","Tashia")
+        CreateVisualEffectObject("SPCLOUD2","Tashia")
+        Wait(3)
+        DisplayStringHead("Tashia",@190) // No such index
+        Wait(4)
+        ActionOverride("Tashia",StartDialogueNoSet(Player1))
+        Wait(1)
+        DisplayStringHead("Tashia",@188) // No such index
+        Wait(3)
+        FadeToColor([30.0],0)
+        Wait(2)
+        ActionOverride("Tashia",Polymorph(MAGE_FEMALE_ELF))
+        ActionOverride("Tashia",MoveToObject(Player1))
+        FadeFromColor([20.0],0)
+        Wait(1)
+        DisplayStringHead("Tashia",@189) // No such index
+        Wait(2)
+        ActionOverride("Tashia",FaceObject(Player1))
+        ActionOverride(Player1,FaceObject("Tashia"))
+        ActionOverride(Player1,EndCutSceneMode())
+        SetGlobal("TashiaRevelation","GLOBAL",5)
+        ActionOverride("Tashia",StartDialogueNoSet(Player1))
+END
+
+

@@ -1,0 +1,15 @@
+IF
+    Global("TashiaRomanceActive","GLOBAL",2)
+    Detect(Player1)
+    CombatCounter(0)
+    Global("ExpLoveTalk","LOCALS",5)
+    RealGlobalTimerExpired("TashiaRomance","GLOBAL")
+THEN
+    RESPONSE #100
+        IncrementGlobal("ExpLoveTalk","LOCALS",1)
+        Interact(Player1)
+        SetGlobal("ExpLoveTalk","LOCALS",7)
+        RealSetGlobalTimer("TashiaRomance","GLOBAL",1)
+END
+
+

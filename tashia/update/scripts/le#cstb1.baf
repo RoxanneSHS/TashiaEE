@@ -1,0 +1,13 @@
+IF
+  Global("LE#TashiaBelmin","GLOBAL",2)
+THEN
+    RESPONSE #100
+             CutSceneId("Tashia")
+             ForceSpell("Belmin",DO_SOME_EFFECTS)
+             //ActionOverride("Belmin",Wait(3))
+             ActionOverride("Belmin",ApplySpell(Myself,DRUID_HUMAN_FORM))
+             ActionOverride("Belmin",Polymorph(CLERIC_MALE_ELF))
+             ActionOverride("Belmin",Wait(1))
+             ActionOverride("Belmin",StartDialogueNoSet(Player1))
+             EndCutSceneMode()
+END

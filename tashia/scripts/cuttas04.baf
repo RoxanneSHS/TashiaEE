@@ -1,0 +1,27 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player1)
+        StorePartyLocations()
+        FadeToColor([30.0],0)
+        Wait(2)
+        LeaveAreaLUAPanic("AR2602","",[700.335],14)
+        LeaveAreaLUA("AR2602","",[700.335],14)
+        ActionOverride(Player2,LeaveAreaLUA("AR2602","",[700.335],2))
+        ActionOverride(Player3,LeaveAreaLUA("AR2602","",[700.335],2))
+        ActionOverride(Player4,LeaveAreaLUA("AR2602","",[700.335],2))
+        ActionOverride(Player5,LeaveAreaLUA("AR2602","",[700.335],2))
+        ActionOverride(Player6,LeaveAreaLUA("AR2602","",[700.335],2))
+        MultiPlayerSync()
+        Wait(1)
+        Explore()
+        MoveViewPoint([730.900],INSTANT)
+        CreateCreature("OBSERVE",[730.950],0) // No such index
+        CreateCreature("taevil",[350.1190],11)
+        CreateCreature("taarilis",[375.1200],11)
+        CreateCreature("tavex",[990.1460],8)
+        StartCutScene("Cuttas05")
+END
+
+

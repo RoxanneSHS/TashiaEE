@@ -1,0 +1,18 @@
+IF
+  True()
+THEN
+    RESPONSE #100
+         CutSceneId("LE#Cowled")
+         MoveToObject(Player1)
+         SetGlobal("LE#TashiaBelmin","GLOBAL",5)
+END
+
+
+IF
+  Global("LE#TashiaBelmin","GLOBAL",5)
+THEN
+    RESPONSE #100
+             ActionOverride("LE#Belmin",MoveToObjectNoInterrupt(Player1))
+             ActionOverride("LE#Belmin",Wait(1))
+             ActionOverride("LE#Belmin",Dialogue(Player1))
+END

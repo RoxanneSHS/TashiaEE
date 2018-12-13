@@ -1,0 +1,26 @@
+IF
+    Range([PC],10)
+    NumTimesTalkedTo(0)
+    Detect([PC])
+THEN
+    RESPONSE #100
+        FaceObject([PC])
+        Wait(1)
+        StartDialogueNoSet([PC])
+END
+
+IF
+    OR(3)
+        SpellCastOnMe([ANYONE],CLERIC_RESURRECTION)
+        SpellCastOnMe([ANYONE],CLERIC_RAISE_DEAD)
+        Global("TADreamResurrected","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("TADreamResurrected","GLOBAL",2)
+        CreateVisualEffectObject("SPDEATH3",Myself)
+        CreateVisualEffectObject("spdusty2",Myself)
+        SmallWait(10)
+        DestroySelf()
+END
+
+

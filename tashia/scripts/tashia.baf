@@ -1,0 +1,893 @@
+IF
+    Global("DoFlirt","LOCALS",1)
+THEN
+    RESPONSE #20
+        SetGlobal("DoFlirt","LOCALS",0)
+        DisplayStringHead(Myself,@250) //
+    RESPONSE #20
+        SetGlobal("DoFlirt","LOCALS",0)
+        DisplayStringHead(Myself,@251) // Reculez ! Reculez !
+        PlaySound("tashiay")
+    RESPONSE #20
+        SetGlobal("DoFlirt","LOCALS",0)
+        DisplayStringHead(Myself,@252) //
+    RESPONSE #20
+        SetGlobal("DoFlirt","LOCALS",0)
+        DisplayStringHead(Myself,@253) // Tu vas sentir la colère de Bhaal !
+    RESPONSE #20
+        SetGlobal("DoFlirt","LOCALS",0)
+        DisplayStringHead(Myself,@254) // Ma magie t'écrasera !
+END
+
+IF
+    Global("DoFlirt","LOCALS",2)
+THEN
+    RESPONSE #20
+        SetGlobal("DoFlirt","LOCALS",0)
+        DisplayStringHead(Myself,@255) // Yakman ?
+    RESPONSE #20
+        SetGlobal("DoFlirt","LOCALS",0)
+        DisplayStringHead(Myself,@256) // Yakman attaque !
+    RESPONSE #20
+        SetGlobal("DoFlirt","LOCALS",0)
+        DisplayStringHead(Myself,@257) // Bats-toi, Yakman, bats-toi !
+    RESPONSE #20
+        SetGlobal("DoFlirt","LOCALS",0)
+        DisplayStringHead(Myself,@258) //
+    RESPONSE #20
+        SetGlobal("DoFlirt","LOCALS",0)
+        DisplayStringHead(Myself,@259) //
+END
+
+IF
+    Global("DoFlirt","LOCALS",3)
+THEN
+    RESPONSE #10
+        SetGlobal("DoFlirt","LOCALS",0)
+        DisplayStringHead(Myself,@260) // Tu as semé la mort et baigné dans le sang. Et le côté obscur de ton âme a pris l'ascendant, que tu le veuilles ou non. Ne crois-tu pas que cela ne fera que continuer ?
+    RESPONSE #10
+        SetGlobal("DoFlirt","LOCALS",0)
+        DisplayStringHead(Myself,@261) // Revenons au temps où tu n'avais pas à affronter de telles épreuves. Retrouve-moi, <CHARNAME>... abandonne tes tribulations et renaissons ensemble.
+    RESPONSE #10
+        SetGlobal("DoFlirt","LOCALS",0)
+        DisplayStringHead(Myself,@262) // Non, je ne comprends pas. Pourquoi mon innocence a-t-elle autant d'importance ?
+    RESPONSE #10
+        SetGlobal("DoFlirt","LOCALS",0)
+        DisplayStringHead(Myself,@263) // J'aimerais beaucoup retrouver mon innocence, mais je ne peux sacrifier tout ce que j'ai acquis. On a besoin de moi comme je suis.
+    RESPONSE #10
+        SetGlobal("DoFlirt","LOCALS",0)
+        DisplayStringHead(Myself,@264) // On ne peut pas revenir sur le passé. Ce que tu proposes n'est pas une solution.
+        RunAwayFrom(Player1,20)
+    RESPONSE #10
+        SetGlobal("DoFlirt","LOCALS",0)
+        DisplayStringHead(Player1,@265) // Ce que tu décris ressemble à l'ignorance. Je veux me maîtriser, et non abandonner.
+    RESPONSE #10
+        SetGlobal("DoFlirt","LOCALS",0)
+        DisplayStringHead(Player1,@266) // Redevenir le pauvre avorton froussard que j'étais ? Jamais !
+    RESPONSE #10
+        SetGlobal("DoFlirt","LOCALS",0)
+        DisplayStringHead(Myself,@267) // C'est une offre tentante, mais tout mon être me dit que c'est impossible. J'ai perdu mon innocence depuis longtemps.
+    RESPONSE #10
+        SetGlobal("DoFlirt","LOCALS",0)
+        DisplayStringHead(Myself,@268) // Je vois. Ainsi, il n'y a donc pas de place pour l'innocence dans le coeur d'un immortel ?
+    RESPONSE #10
+        SetGlobal("DoFlirt","LOCALS",0)
+        DisplayStringHead(Myself,@269) // Qu'il en soit ainsi alors. Une fois ton innocence perdue, tu feras un pas de plus vers l'immortalité. Affronte-la... si tu le peux.
+END
+
+IF
+    Global("DoFlirt","LOCALS",4)
+THEN
+    RESPONSE #10
+        SetGlobal("DoFlirt","LOCALS",0)
+        DisplayStringHead(Player1,@270) // Je reviendrai quand j'aurai terminé mon enquête.
+    RESPONSE #10
+        SetGlobal("DoFlirt","LOCALS",0)
+        DisplayStringHead(Player1,@271) // Je crois que je vais aller parler à ce Hectan.
+    RESPONSE #10
+        SetGlobal("DoFlirt","LOCALS",0)
+        DisplayStringHead(Player1,@272) // Mon livre de sorts ! Merci, messire ! Je vois que la légende de <CHARNAME> n'est pas exagérée ! Je peux enfin fabriquer des parchemins !
+    RESPONSE #10
+        SetGlobal("DoFlirt","LOCALS",0)
+        DisplayStringHead(Player1,@273) // Je savais que ce voleur était le coupable ! Mais s'il croit qu'un parchemin de téléportation l'aidera à quitter cette ville, il est fou !
+    RESPONSE #10
+        SetGlobal("DoFlirt","LOCALS",0)
+        DisplayStringHead(Player1,@274) // J'ai bien un parchemin de téléportation, et je l'échangerai volontiers contre mon livre de sorts... mais le parchemin est inutile. Les mages de Yaga Shura ont lancé des sorts puissants pour nous emprisonner ici.
+    RESPONSE #10
+        SetGlobal("DoFlirt","LOCALS",0)
+        DisplayStringHead(Player1,@275) // Tous ceux qui tenteront de s'enfuir grâce à la magie rebondiront sur des murs invisibles - voilà une fin bien macabre. Mais néanmoins, voici le parchemin que voulait Hectan.
+    RESPONSE #10
+        SetGlobal("DoFlirt","LOCALS",0)
+        DisplayStringHead(Player1,@276) // Je présume que vous avez le choix, <CHARNAME>, de prévenir ou non Hectan des conséquences de l'utilisation du parchemin. Je vous souhaite bonne chance pour retrouver mon livre de sorts.
+    RESPONSE #10
+        SetGlobal("DoFlirt","LOCALS",0)
+        DisplayStringHead(Player1,@277) // Avez-vous fait l'échange avec Hectan ? Avez-vous retrouvé mon livre de sorts ?
+    RESPONSE #10
+        SetGlobal("DoFlirt","LOCALS",0)
+        DisplayStringHead(Player1,@278) // Oui, voilà ton livre de sorts.
+    RESPONSE #10
+        SetGlobal("DoFlirt","LOCALS",0)
+        DisplayStringHead(Player1,@279) // Je n'ai pas encore effectué l'échange.
+END
+
+IF
+    Global("DoFlirt","LOCALS",5)
+THEN
+    RESPONSE #10
+        SetGlobal("DoFlirt","LOCALS",0)
+        DisplayStringHead(Player1,@280) // Excusez-moi, je... sans vouloir vous offenser... mais vous êtes un de ces étrangers dont tout le monde parle, n'est-ce pas ? Un aventurier venu du nord ?
+    RESPONSE #10
+        SetGlobal("DoFlirt","LOCALS",0)
+        DisplayStringHead(Player1,@281) // Le parchemin de Helm disparaît avec la destruction de l'avatar de Démogorgon.
+    RESPONSE #10
+        SetGlobal("DoFlirt","LOCALS",0)
+        DisplayStringHead(Myself,@282) // P-par pitié, ne me faites pas de mal ! Je... je suis venu vous voir parce que j'ai entendu parler de votre grand pouvoir, étranger. Vous... vous êtes bien un aventurier venu du nord, n'est-ce pas ?
+    RESPONSE #10
+        SetGlobal("DoFlirt","LOCALS",0)
+        DisplayStringHead(Player1,@283) //
+    RESPONSE #10
+        SetGlobal("DoFlirt","LOCALS",0)
+        DisplayStringHead(Player1,@284) //
+    RESPONSE #10
+        SetGlobal("DoFlirt","LOCALS",0)
+        DisplayStringHead(Player1,@285) // Mais oui, bien sûr. Tout le monde peut voir que vous êtes un homme extraordinaire, pardonnez-moi.
+    RESPONSE #10
+        SetGlobal("DoFlirt","LOCALS",0)
+        DisplayStringHead(Player1,@286) // Et toi, tu dois être celui dont parlait le garçon près du cimetière.
+    RESPONSE #10
+        SetGlobal("DoFlirt","LOCALS",0)
+        DisplayStringHead(Player1,@287) // On vous a parlé de moi ? Oui, c'est vrai que c'est une petite ville. Et à l'écart de tout, c'est-ce que j'ai pensé... suffisamment pour que personne ne me trouve ici. Quelle grossière erreur !
+    RESPONSE #10
+        SetGlobal("DoFlirt","LOCALS",0)
+        DisplayStringHead(Player1,@288) // C'est une aubaine que quelqu'un d'aussi puissant que vous soit venu dans ce coin perdu. Je pensais qu'Amkethran serait suffisamment loin de tout pour que personne ne m'y trouve, mais je me trompais !
+    RESPONSE #10
+        SetGlobal("DoFlirt","LOCALS",0)
+        DisplayStringHead(Player1,@289) // Je ne veux pas vous importuner, étranger, mais je cours un très grave danger ! J'ai besoin de votre aide ! J'implore de vous une faveur, messire, sinon ma fille et moi allons sûrement mourir !
+END
+
+
+IF
+    InParty(Myself)
+    Global("PastPhaere","LOCALS",0)
+    OR(2)
+        Global("PhaereInnuendo","GLOBAL",2)
+        Global("PhaereInnuendo","GLOBAL",3)
+    !Range("Phaere",6)
+    OR(2)
+        Global("TashiaRomanceActive","GLOBAL",1)
+        Global("TashiaRomanceActive","GLOBAL",2)
+    CombatCounter(0)
+THEN
+    RESPONSE #100
+        SetGlobal("PastPhaere","LOCALS",1)
+        StartDialogueNoSet([PC])
+END
+
+IF
+    Global("LoveTalk","LOCALS",0)
+    InParty(Myself)
+THEN
+    RESPONSE #100
+        RealSetGlobalTimer("TashiaRomance","GLOBAL",900)
+        SetGlobal("CheckTashiaMatch","GLOBAL",1)
+        SetGlobal("LoveTalk","LOCALS",1)
+        SetGlobal("TashiaRomanceActive","GLOBAL",1)
+        Continue()
+END
+
+IF
+    Global("CheckTashiaMatch","GLOBAL",1)
+    !Gender(Player1,FEMALE)
+THEN
+    RESPONSE #100
+        SetGlobal("TashiaMatch","GLOBAL",1)
+        SetGlobal("CheckTashiaMatch","GLOBAL",2)
+END
+
+IF
+    Global("CheckTashiaMatch","GLOBAL",1)
+    Gender(Player1,FEMALE)
+THEN
+    RESPONSE #100
+        SetGlobal("TashiaMatch","GLOBAL",0)
+        SetGlobal("CheckTashiaMatch","GLOBAL",2)
+END
+
+IF
+    Global("SolaufeinJob","GLOBAL",6)
+    Global("PhaereJob","GLOBAL",5)
+    Global("GnomePatrolDead","AR2100",0)
+    AreaCheck("AR2100")
+    Global("GnomeTalk","LOCALS",0)
+    !Dead("Tashia")
+    InParty("Jan")
+THEN
+    RESPONSE #100
+        SetGlobal("GnomeTalk","LOCALS",1)
+        StartDialogueNoSet(Player1)
+END
+
+IF
+    AreaCheck("AR1100")
+    Global("UmarHillComment","LOCALS",0)
+THEN
+    RESPONSE #100
+        SetGlobal("UmarHillComment","LOCALS",1)
+        SetInterrupt(FALSE)
+        DisplayStringHead(Myself,@153) // No such index
+        Wait(4)
+        DisplayStringHead(Myself,@154) // No such index
+        Wait(4)
+        DisplayStringHead(Myself,@155) // No such index
+END
+
+IF
+    AreaCheck("AR0803")
+    Global("VampireComment","LOCALS",0)
+THEN
+    RESPONSE #100
+        SetGlobal("VampireComment","LOCALS",1)
+        DisplayStringHead(Myself,@152) // No such index
+END
+
+IF
+    AreaCheck("AR2807")
+    Global("DragonComment","LOCALS",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DragonComment","LOCALS",1)
+        DisplayStringHead(Myself,@151) // No such index
+END
+
+IF
+    AreaCheck("AR2400")
+    Global("IlithidComment","LOCALS",0)
+THEN
+    RESPONSE #100
+        SetGlobal("IlithidComment","LOCALS",1)
+        DisplayStringHead(Myself,@150) // No such index
+END
+
+IF
+    AreaCheck("AR1515")
+    Global("YoshimoComment","LOCALS",0)
+THEN
+    RESPONSE #100
+        SetGlobal("YoshimoComment","LOCALS",1)
+        Interact(Player1)
+END
+
+IF
+    AreaCheck("AR1512")
+    Global("ImoenComment","LOCALS",0)
+    InParty("Imoen")
+THEN
+    RESPONSE #100
+        SetGlobal("ImoenComment","LOCALS",1)
+        Interact(Player1)
+END
+
+IF
+    AreaCheck("AR2300")
+    Global("FishComment","LOCALS",0)
+    InParty("Jan")
+THEN
+    RESPONSE #100
+        SetGlobal("FishComment","LOCALS",1)
+        Interact(Player1)
+END
+
+IF
+    AreaCheck("AR2500")
+    Global("NatureComment","LOCALS",0)
+    InParty("Jaheira")
+THEN
+    RESPONSE #100
+        SetGlobal("NatureComment","LOCALS",1)
+        Interact(Player1)
+END
+
+IF
+    AreaCheck("AR2800")
+    Global("SuldanesselarComment","LOCALS",0)
+THEN
+    RESPONSE #100
+        SetGlobal("SuldanesselarComment","LOCALS",1)
+        Interact(Player1)
+END
+
+IF
+    AreaCheck("AR1302")
+    !Dead("TorGal") // TorGal
+    Global("TrollComment","LOCALS",0)
+THEN
+    RESPONSE #100
+        SetGlobal("TrollComment","LOCALS",1)
+        StartDialogueNoSet(Player1)
+END
+
+IF
+    Global("tagirlThanks","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("tagirlThanks","GLOBAL",0)
+        ActionOverride("tagirl",DisplayStringHead("tagirl",@148)) // No such index
+END
+
+IF
+    Global("SkipTashiaRomance","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("LoveTalk","LOCALS",27)
+        SetGlobal("SpawnedGirl","GLOBAL",0)
+        SetGlobal("TashiaRomance","GLOBAL",1)
+        SetGlobal("SkipTashiaRomance","GLOBAL",0)
+END
+
+IF
+    Global("SkipAllTashiaRomance","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("LoveTalk","LOCALS",45)
+        SetGlobal("SkipAllTashiaRomance","GLOBAL",0)
+END
+
+IF
+    Global("PLAY04","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("PLAY04","GLOBAL",0)
+        StartCutSceneMode()
+        StartCutScene("cuttas04")
+END
+
+IF
+    Global("TashiaKOTimerSet","GLOBAL",0)
+    Global("KickedOut","LOCALS",1)
+    OR(2)
+        Global("TashiaRomanceActive","GLOBAL",1)
+        Global("TashiaRomanceActive","GLOBAL",2)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("TashiaRomanceExpired","LOCALS",ONE_DAY)
+        SetGlobal("TashiaKOTimerSet","GLOBAL",1)
+END
+
+IF
+    Global("TashiaKOTimerSet","GLOBAL",1)
+    GlobalTimerExpired("TashiaRomanceExpired","LOCALS")
+    Global("KickedOut","LOCALS",1)
+    OR(2)
+        Global("TashiaRomanceActive","GLOBAL",1)
+        Global("TashiaRomanceActive","GLOBAL",2)
+THEN
+    RESPONSE #100
+        SetGlobal("TashiaKOTimerSet","GLOBAL",2)
+        SetGlobal("TashiaRomanceActive","GLOBAL",3)
+END
+
+IF
+    Global("TashiaKOTimerSet","GLOBAL",1)
+    GlobalTimerExpired("TashiaRomanceExpired","LOCALS")
+    Global("KickedOut","LOCALS",0)
+    OR(2)
+        Global("TashiaRomanceActive","GLOBAL",1)
+        Global("TashiaRomanceActive","GLOBAL",2)
+THEN
+    RESPONSE #100
+        SetGlobal("TashiaKOTimerSet","GLOBAL",0)
+END
+
+IF
+    InParty(Myself)
+    Global("TashiaSawSun","GLOBAL",0)
+    AreaCheck("AR2000")
+THEN
+    RESPONSE #100
+        SetGlobal("TashiaSawSun","GLOBAL",1)
+        DisplayStringHead(Myself,@129) // No such index
+        Wait(4)
+        DisplayStringHead(Myself,@130) // No such index
+END
+
+IF
+    InParty(Myself)
+    PartyRested()
+    AreaType(DUNGEON)
+    See("Jaheira")
+    InParty("Jaheira")
+    !Global("SnoreJaheira","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("SnoreJaheira","GLOBAL",1)
+        DisplayStringHead(Myself,@123) // No such index
+        Wait(3)
+        DisplayStringHead("Jaheira",@124) // No such index
+        Wait(3)
+        DisplayStringHead(Myself,@125) // No such index
+        Wait(3)
+        DisplayStringHead("Jaheira",@126) // No such index
+        Wait(3)
+        DisplayStringHead(Myself,@127) // No such index
+END
+
+IF
+    InParty(Myself)
+    PartyRested()
+    AreaType(DUNGEON)
+    See(Player1)
+    OR(2)
+        !InParty("Jaheira")
+        Global("SnoreJaheira","GLOBAL",1)
+THEN
+    RESPONSE #10
+        DisplayStringHead(Myself,@107) // No such index
+    RESPONSE #10
+        DisplayStringHead(Myself,@108) // No such index
+        Wait(4)
+        DisplayStringHead(Myself,@109) // No such index
+    RESPONSE #10
+        DisplayStringHead(Myself,@110) // No such index
+        Wait(4)
+        DisplayStringHead(Myself,@111) // No such index
+    RESPONSE #10
+        DisplayStringHead(Myself,@112) // No such index
+        Wait(4)
+        DisplayStringHead(Myself,@113) // No such index
+        Wait(4)
+        DisplayStringHead(Myself,@114) // No such index
+    RESPONSE #10
+        DisplayStringHead(Myself,@121) // No such index
+        Wait(4)
+        DisplayStringHead(Myself,@122) // No such index
+    RESPONSE #10
+        DisplayStringHead(Myself,@166) // No such index
+    RESPONSE #10
+        DisplayStringHead(Myself,@167) // No such index
+    RESPONSE #10
+        DisplayStringHead(Myself,@168) // No such index
+    RESPONSE #10
+        DisplayStringHead(Myself,@169) // No such index
+        Wait(4)
+        DisplayStringHead(Player1,@170) // No such index
+        Wait(4)
+        DisplayStringHead(Myself,@171) // No such index
+    RESPONSE #10
+        DisplayStringHead(Myself,@172) // No such index
+    RESPONSE #10
+        DisplayStringHead(Myself,@173) // No such index
+    RESPONSE #10
+        DisplayStringHead(Myself,@174) // No such index
+    RESPONSE #10
+        DisplayStringHead(Myself,@175) // No such index
+END
+
+IF
+    InParty(Myself)
+    PartyRested()
+    !AreaType(DUNGEON)
+    See(Player1)
+THEN
+    RESPONSE #10
+        DisplayStringHead(Myself,@115) // No such index
+        Wait(4)
+        DisplayStringHead(Myself,@116) // No such index
+    RESPONSE #10
+        DisplayStringHead(Myself,@110) // No such index
+        Wait(4)
+        DisplayStringHead(Myself,@117) // No such index
+    RESPONSE #10
+        DisplayStringHead(Myself,@118) // No such index
+    RESPONSE #10
+        DisplayStringHead(Myself,@119) // No such index
+        Wait(4)
+        DisplayStringHead(Myself,@120) // No such index
+    RESPONSE #10
+        DisplayStringHead(Myself,@156) // No such index
+    RESPONSE #10
+        DisplayStringHead(Myself,@157) // No such index
+        Wait(4)
+        DisplayStringHead(Myself,@158) // No such index
+    RESPONSE #10
+        DisplayStringHead(Myself,@159) // No such index
+        Wait(4)
+        DisplayStringHead(Myself,@160) // No such index
+    RESPONSE #10
+        DisplayStringHead(Myself,@161) // No such index
+    RESPONSE #10
+        DisplayStringHead(Myself,@162) // No such index
+    RESPONSE #10
+        DisplayStringHead(Myself,@163) // No such index
+        Wait(4)
+        DisplayStringHead(Myself,@164) // No such index
+    RESPONSE #10
+        DisplayStringHead(Myself,@165) // No such index
+END
+
+IF
+    InParty(Myself)
+    Global("TashiaRomanceActive","GLOBAL",2)
+    OR(2)
+        Global("JaheiraRomanceActive","GLOBAL",1)
+        Global("JaheiraRomanceActive","GLOBAL",2)
+THEN
+    RESPONSE #100
+        SetGlobal("JaheiraRomanceActive","GLOBAL",3)
+END
+
+IF
+    InParty(Myself)
+    Global("TashiaRomanceActive","GLOBAL",2)
+    OR(2)
+        Global("ViconiaRomanceActive","GLOBAL",1)
+        Global("ViconiaRomanceActive","GLOBAL",2)
+THEN
+    RESPONSE #100
+        SetGlobal("ViconiaRomanceActive","GLOBAL",3)
+END
+
+IF
+    InParty(Myself)
+    Global("TashiaRomanceActive","GLOBAL",2)
+    OR(2)
+        Global("AerieRomanceActive","GLOBAL",1)
+        Global("AerieRomanceActive","GLOBAL",2)
+THEN
+    RESPONSE #100
+        SetGlobal("AerieRomanceActive","GLOBAL",3)
+END
+
+IF
+    InParty(Myself)
+    GlobalGT("LoveTalk","LOCALS",22)
+    OR(2)
+        Global("TashiaRomanceActive","GLOBAL",1)
+        Global("TashiaRomanceActive","GLOBAL",2)
+    OR(3)
+        Global("JaheiraRomanceActive","GLOBAL",2)
+        Global("AerieRomanceActive","GLOBAL",2)
+        Global("ViconiaRomanceActive","GLOBAL",2)
+THEN
+    RESPONSE #100
+        SetGlobal("TashiaRomanceActive","GLOBAL",3)
+END
+
+IF
+    InParty(Myself)
+    RealGlobalTimerExpired("TashiaRomance","GLOBAL")
+    PartyRested()
+    !Global("TashiaRomanceActive","GLOBAL",0)
+    !Global("TashiaRomanceActive","GLOBAL",3)
+    See(Player1)
+    !AreaType(DUNGEON)
+    CombatCounter(0)
+    OR(24)
+        Global("LoveTalk","LOCALS",1)
+        Global("LoveTalk","LOCALS",3)
+        Global("LoveTalk","LOCALS",5)
+        Global("LoveTalk","LOCALS",7)
+        Global("LoveTalk","LOCALS",9)
+        Global("LoveTalk","LOCALS",11)
+        Global("LoveTalk","LOCALS",13)
+        Global("LoveTalk","LOCALS",15)
+        Global("LoveTalk","LOCALS",17)
+        Global("LoveTalk","LOCALS",19)
+        Global("LoveTalk","LOCALS",21)
+        Global("LoveTalk","LOCALS",23)
+        Global("LoveTalk","LOCALS",25)
+        Global("LoveTalk","LOCALS",27)
+        Global("LoveTalk","LOCALS",29)
+        Global("LoveTalk","LOCALS",31)
+        Global("LoveTalk","LOCALS",33)
+        Global("LoveTalk","LOCALS",35)
+        Global("LoveTalk","LOCALS",37)
+        Global("LoveTalk","LOCALS",39)
+        Global("LoveTalk","LOCALS",41)
+        Global("LoveTalk","LOCALS",43)
+        Global("LoveTalk","LOCALS",45)
+        Global("LoveTalk","LOCALS",47)
+THEN
+    RESPONSE #100
+        RealSetGlobalTimer("TashiaRomance","GLOBAL",30)
+END
+
+IF
+    InParty(Myself)
+    RealGlobalTimerExpired("TashiaRomance","GLOBAL")
+    !Global("TashiaRomanceActive","GLOBAL",0)
+    !Global("TashiaRomanceActive","GLOBAL",3)
+    !Global("Chapter","GLOBAL",%bg2_chapter_4%)
+    !Global("Chapter","GLOBAL",%bg2_chapter_5%)
+    !AreaType(DUNGEON)
+    See(Player1)
+    !See([ENEMY])
+    !Range([NEUTRAL],10)
+    CombatCounter(0)
+    OR(10)
+        Global("LoveTalk","LOCALS",1)
+        Global("LoveTalk","LOCALS",3)
+        Global("LoveTalk","LOCALS",5)
+        Global("LoveTalk","LOCALS",7)
+        Global("LoveTalk","LOCALS",9)
+        Global("LoveTalk","LOCALS",11)
+        Global("LoveTalk","LOCALS",13)
+        Global("LoveTalk","LOCALS",15)
+        Global("LoveTalk","LOCALS",17)
+        Global("LoveTalk","LOCALS",21)
+THEN
+    RESPONSE #100
+        PlaySong(0)
+        PlaySound("TashiaM1")
+        IncrementGlobal("LoveTalk","LOCALS",1)
+        Interact(Player1)
+END
+
+IF
+    InParty(Myself)
+    RealGlobalTimerExpired("TashiaRomance","GLOBAL")
+    !Global("TashiaRomanceActive","GLOBAL",0)
+    !Global("TashiaRomanceActive","GLOBAL",3)
+    !Global("Chapter","GLOBAL",%bg2_chapter_4%)
+    !Global("Chapter","GLOBAL",%bg2_chapter_5%)
+    Global("TashiaMatch","GLOBAL",1)
+    !AreaType(DUNGEON)
+    See(Player1)
+    !See([ENEMY])
+    !Range([NEUTRAL],10)
+    CombatCounter(0)
+    OR(10)
+		 Global("LoveTalk","LOCALS",23)
+		 Global("LoveTalk","LOCALS",25)
+	    Global("LoveTalk","LOCALS",29)
+	    Global("LoveTalk","LOCALS",31)
+		 Global("LoveTalk","LOCALS",33)
+		 Global("LoveTalk","LOCALS",35)
+	  	 Global("LoveTalk","LOCALS",37)
+	    Global("LoveTalk","LOCALS",39)
+	    Global("LoveTalk","LOCALS",41)
+	    Global("LoveTalk","LOCALS",45)
+THEN
+    RESPONSE #100
+		  PlaySong(0)
+		  PlaySound("TashiaM2")
+        IncrementGlobal("LoveTalk","LOCALS",1)
+        Interact(Player1)
+END
+
+
+IF
+    InParty(Myself)
+    RealGlobalTimerExpired("TashiaRomance","GLOBAL")
+    !Global("TashiaRomanceActive","GLOBAL",0)
+    !Global("TashiaRomanceActive","GLOBAL",3)
+    !Global("Chapter","GLOBAL",%bg2_chapter_4%)
+    !Global("Chapter","GLOBAL",%bg2_chapter_5%)
+    Global("TashiaMatch","GLOBAL",1)
+    !AreaType(DUNGEON)
+    See(Player1)
+    !See([ENEMY])
+    !Range([NEUTRAL],10)
+    CombatCounter(0)
+    Global("LoveTalk","LOCALS",43)
+THEN
+    RESPONSE #100
+		  PlaySong(0)
+		  PlaySound("TashiaM1")
+        IncrementGlobal("LoveTalk","LOCALS",1)
+        Interact(Player1)
+END
+
+IF
+    InParty(Myself)
+    RealGlobalTimerExpired("TashiaRomance","GLOBAL")
+    !Global("Chapter","GLOBAL",%bg2_chapter_4%)
+    !Global("Chapter","GLOBAL",%bg2_chapter_5%)
+    !AreaType(DUNGEON)
+    See(Player1)
+    !See([ENEMY])
+    !Range([NEUTRAL],10)
+    CombatCounter(0)
+    Global("LoveTalk","LOCALS",19)
+THEN
+    RESPONSE #100
+        IncrementGlobal("LoveTalk","LOCALS",1)
+        Interact(Player1)
+        CreateCreatureObjectOffScreen("TAJARMIS",Myself,0,0,0)
+END
+
+IF
+    InParty(Myself)
+    RealGlobalTimerExpired("TashiaRomance","GLOBAL")
+    !Global("TashiaRomanceActive","GLOBAL",0)
+    !Global("TashiaRomanceActive","GLOBAL",3)
+    Global("Chapter","GLOBAL",%bg2_chapter_6%)
+    Global("TashiaMatch","GLOBAL",1)
+    !AreaType(DUNGEON)
+    See(Player1)
+    !See([ENEMY])
+    !Range([NEUTRAL],10)
+    CombatCounter(0)
+    Global("LoveTalk","LOCALS",47)
+THEN
+    RESPONSE #100
+        CreateCreatureObjectOffScreen("taarilis",Myself,0,0,0)
+        IncrementGlobal("LoveTalk","LOCALS",1)
+END
+
+IF
+    InParty(Myself)
+    RealGlobalTimerExpired("TashiaRomance","GLOBAL")
+    OR(23)
+        Global("LoveTalk","LOCALS",2)
+        Global("LoveTalk","LOCALS",4)
+        Global("LoveTalk","LOCALS",6)
+        Global("LoveTalk","LOCALS",8)
+        Global("LoveTalk","LOCALS",10)
+        Global("LoveTalk","LOCALS",12)
+        Global("LoveTalk","LOCALS",14)
+        Global("LoveTalk","LOCALS",16)
+        Global("LoveTalk","LOCALS",18)
+        Global("LoveTalk","LOCALS",20)
+        Global("LoveTalk","LOCALS",22)
+        Global("LoveTalk","LOCALS",24)
+        Global("LoveTalk","LOCALS",26)
+        Global("LoveTalk","LOCALS",28)
+        Global("LoveTalk","LOCALS",30)
+        Global("LoveTalk","LOCALS",32)
+        Global("LoveTalk","LOCALS",34)
+        Global("LoveTalk","LOCALS",36)
+        Global("LoveTalk","LOCALS",38)
+        Global("LoveTalk","LOCALS",40)
+        Global("LoveTalk","LOCALS",42)
+        Global("LoveTalk","LOCALS",44)
+        Global("LoveTalk","LOCALS",46)
+THEN
+    RESPONSE #100
+        IncrementGlobal("LoveTalk","LOCALS",1)
+        RealSetGlobalTimer("TashiaRomance","GLOBAL",3000)
+END
+
+IF
+    Global("TashiaMatch","GLOBAL",0)
+    GlobalGT("LoveTalk","LOCALS",22)
+    !Global("TashiaRomanceActive","GLOBAL",3)
+THEN
+    RESPONSE #100
+        SetGlobal("TashiaRomanceActive","GLOBAL",3)
+END
+
+IF
+    InParty(Myself)
+    RealGlobalTimerExpired("TashiaRomance","GLOBAL")
+    !Global("Chapter","GLOBAL",%bg2_chapter_4%)
+    !Global("Chapter","GLOBAL",%bg2_chapter_5%)
+    AreaType(CITY)
+    See(Player1)
+    !See([ENEMY])
+    !Range([NEUTRAL],10)
+    CombatCounter(0)
+    Global("LoveTalk","LOCALS",27)
+    Global("SpawnedGirl","GLOBAL",0)
+THEN
+    RESPONSE #100
+        ClearAllActions()
+        StartCutScene("cuttas01")
+END
+
+IF
+        Global("TashiaPlot","GLOBAL",8)
+THEN
+    RESPONSE #100
+        ActionOverride("tagirl",DisplayStringHead("tagirl",@149)) // No such index
+        IncrementGlobal("LoveTalk","LOCALS",1)
+        ClearAllActions()
+		  PlaySong(0)
+		  PlaySound("TashiaM1")
+        Interact(Player1)
+END
+
+IF
+        Global("TashiaPlot","GLOBAL",9)
+THEN
+    RESPONSE #100
+        ActionOverride("tagirl",DisplayStringHead("tagirl",@149)) // No such index
+        IncrementGlobal("LoveTalk","LOCALS",1)
+        ClearAllActions()
+  		  PlaySong(0)
+		  PlaySound("TashiaM2")
+        Interact(Player1)
+END
+
+
+IF
+    Dead("TAJARMIS")
+    Dead("TASOLD01")
+    Dead("TASOLD02")
+    Global("TashiaPlot","GLOBAL",2)
+THEN
+    RESPONSE #100
+        DisplayStringHead(Myself,@128) // No such index
+        Wait(2)
+        SetGlobal("TashiaPlot","GLOBAL",3)
+        StartDialogueNoSet(Player1)
+END
+
+IF
+    Allegiance(Myself,ENEMY)
+    !InParty(Myself)
+THEN
+    RESPONSE #100
+        DisplayStringHead(Myself,2912) // Aah !
+        EscapeArea()
+        Continue()
+END
+
+IF
+    Global("JokeMinsc","GLOBAL",1)
+    InParty("Minsc")
+THEN
+    RESPONSE #100
+        SetGlobal("JokeMinsc","GLOBAL",2)
+        DisplayStringHead("Minsc",@131) // No such index
+        Wait(3)
+        DisplayStringHead(Myself,@132) // No such index
+        Wait(3)
+        DisplayStringHead("Minsc",@133) // No such index
+END
+
+IF
+    Global("JokeEdwin","GLOBAL",1)
+    InParty("Edwin")
+THEN
+    RESPONSE #100
+        SetGlobal("JokeEdwin","GLOBAL",2)
+        DisplayStringHead("Edwin",@134) // No such index
+        Wait(3)
+        DisplayStringHead(Myself,@135) // No such index
+END
+
+IF
+    Global("JokeCernd","GLOBAL",1)
+    InParty("Cernd")
+THEN
+    RESPONSE #100
+        SetGlobal("JokeCernd","GLOBAL",2)
+        DisplayStringHead("Cernd",@136) // No such index
+        Wait(3)
+        DisplayStringHead(Myself,@137) // No such index
+END
+
+IF
+    Global("JokeKorgan","GLOBAL",1)
+    InParty("Korgan")
+THEN
+    RESPONSE #100
+        SetGlobal("JokeKorgan","GLOBAL",2)
+        DisplayStringHead("Korgan",@138) // No such index
+END
+
+IF
+    Global("JokeJan","GLOBAL",1)
+    InParty("Jan")
+    !Dead("Jan")
+THEN
+    RESPONSE #100
+        SetGlobal("JokeJan","GLOBAL",2)
+        DisplayStringHead("Jan",@139) // No such index
+        Wait(10)
+        DisplayStringHead("Jan",@140) // No such index
+        Wait(10)
+        DisplayStringHead("Jan",@141) // No such index
+        Wait(10)
+        DisplayStringHead("Jan",@142) // No such index
+        Wait(10)
+        DisplayStringHead("Jan",@143) // No such index
+        Wait(10)
+        DisplayStringHead("Jan",@144) // No such index
+        Wait(10)
+        DisplayStringHead("Jan",@145) // No such index
+        Wait(10)
+        DisplayStringHead("Jan",@146) // No such index
+        Wait(10)
+        DisplayStringHead("Jan",@147) // No such index
+END
