@@ -1,7 +1,7 @@
 BACKUP ~tashia/backup~
 AUTHOR ~Bert "Lord Ernie" Van Hertum (b.vanhertum@gmail.com)~
 
-VERSION ~v1.6~
+VERSION ~v1.7~
 
 // Translation
 AUTO_TRA ~tashia\%s~
@@ -43,16 +43,22 @@ LANGUAGE ~Francais (traduction de Yoho)~
          ~french~
          ~tashia/american/wsetup.tra~
          ~tashia/french/wsetup.tra~
+
 LANGUAGE ~Deutsch (Uebersetzung von Maus)~
          ~deutsch~
          ~tashia/deutsch/wsetup.tra~
+
 LANGUAGE ~Espanol (Traducido por el Clan DLAN)~
          ~spanish~
          ~tashia/spanish/wsetup.tra~
+
 LANGUAGE ~Italiano (by al17 e Hellspawn, http://rtt.altervista.org)~
          ~italian~
          ~tashia/italian/wsetup.tra~
 
+LANGUAGE ~Russian (partial translation by aerie.ru & yota13)~
+         ~russian~
+         ~tashia/russian/wsetup.tra~
 
 
 // Installation
