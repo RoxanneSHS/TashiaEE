@@ -18,21 +18,6 @@ ALWAYS
     OUTER_SET EVAL ~%name_source%~ = bg2_chapter
   END
  
-ACTION_IF (GAME_IS ~eet bg2ee~) BEGIN 
-  ACTION_DEFINE_ARRAY O#noconvert BEGIN END
- ACTION_DEFINE_ARRAY O#reload BEGIN wsetup END
-
-  LAF HANDLE_CHARSETS
-    INT_VAR
-      infer_charsets = 1
-    STR_VAR
-      tra_path = EVAL ~%MOD_FOLDER%~
-      noconvert_array = O#noconvert
-      reload_array = O#reload
-  END
-  END
-  
-  
 END
 
 LANGUAGE ~American English~
